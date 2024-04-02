@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.7acaea2f.css",
-    "main.js": "/E-Pharmacy/static/js/main.5619ca22.js",
+    "main.js": "/E-Pharmacy/static/js/main.61653b2a.js",
     "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.526652b43c0aaf616db114e8eef73f5d.svg",
     "index.html": "/E-Pharmacy/index.html",
     "main.7acaea2f.css.map": "/E-Pharmacy/static/css/main.7acaea2f.css.map",
-    "main.5619ca22.js.map": "/E-Pharmacy/static/js/main.5619ca22.js.map"
+    "main.61653b2a.js.map": "/E-Pharmacy/static/js/main.61653b2a.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.5619ca22.js"
+    "static/js/main.61653b2a.js"
   ]
 }
