@@ -1,16 +1,27 @@
+import LoginPage from "pages/LoginPage";
+import RegisterPage from "pages/RegisterPage";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import HomePage from "pages/HomePage";
+import MedicineStorePage from "pages/MedicineStorePage";
+import MedicinePage from "pages/MedicinePage";
+import ProductPage from "pages/ProductPage";
+import CartPage from "pages/CartPage";
+import NotFoundPage from "pages/NotFoundPage";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: 40,
-        color: "#010101",
-      }}
-    >
-      E-Pharmasy
-    </div>
+    <Routes>
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<Layout />}>
+        <Route path="home" element={<HomePage />} />
+        <Route path="medicine-store" element={<MedicineStorePage />} />
+        <Route path="medicine" element={<MedicinePage />} />
+        <Route path="product" element={<ProductPage />} />
+        <Route path="cart" element={<CartPage />} />
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };
