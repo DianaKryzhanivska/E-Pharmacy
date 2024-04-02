@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { CommonContainer } from "styles/GlobalStyles";
+import imgMob from "../../../images/hero-mob@1x.png";
+import imgTab from "../../../images/hero-tab@1x.png";
+import imgDesk from "../../../images/hero-desk@1x.png";
 
 export const Container = styled(CommonContainer)`
   padding-top: 197px;
@@ -23,16 +26,21 @@ export const HeroBox = styled.div`
   width: 331px;
   height: 312px;
   padding: 19px 0 91px;
+  background-image: url(${imgMob});
+  background-size: cover;
+  background-position: center;
 
   @media only screen and (min-width: 768px) {
     width: 704px;
     height: 508px;
     padding: 140px 64px 156px 31px;
+    background-image: url(${imgTab});
   }
 
   @media only screen and (min-width: 1440px) {
     width: 749px;
     padding: 140px 86px 156px 54px;
+    background-image: url(${imgDesk});
   }
 `;
 
