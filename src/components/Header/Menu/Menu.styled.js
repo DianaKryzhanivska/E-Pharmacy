@@ -8,6 +8,7 @@ export const Overlay = styled.div`
   top: 0;
   left: 0;
   overflow-y: auto;
+  background: rgba(29, 30, 33, 0.45);
   display: flex;
   justify-content: flex-end;
   z-index: 10;
