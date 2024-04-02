@@ -10,5 +10,7 @@ export const theme = {
   },
   borders: {
     gray: "rgba(241, 241, 241, 0.50)",
+    outline: "rgba(247, 248, 250, 0.30)",
+    icon: "rgba(247, 248, 250, 0.10)",
   },
 };
