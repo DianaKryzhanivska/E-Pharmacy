@@ -21,6 +21,10 @@ export const Content = styled.div`
   height: auto;
   overflow-y: auto;
   z-index: 100;
+
+  @media only screen and (min-width: 768px) {
+    width: 334px;
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -38,4 +42,9 @@ export const CloseBtn = styled.button`
 export const Container = styled(CommonContainer)`
   padding-top: 260px;
   padding-bottom: 40px;
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 350px;
+    padding-bottom: 64px;
+  }
 `;

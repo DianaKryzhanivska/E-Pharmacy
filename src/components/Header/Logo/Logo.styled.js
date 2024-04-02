@@ -12,9 +12,23 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   & p {
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.48px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 14px;
+
+    & svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    & p {
+      font-size: 20px;
+      letter-spacing: -0.6px;
+    }
   }
 `;

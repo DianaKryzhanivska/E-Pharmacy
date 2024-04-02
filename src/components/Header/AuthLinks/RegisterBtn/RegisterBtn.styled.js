@@ -9,4 +9,8 @@ export const Btn = styled.button`
   font-size: 14px;
   font-weight: 400;
   line-height: 1em;
+
+  @media only screen and (min-width: 768px) {
+    padding: 16px 32px;
+  }
 `;

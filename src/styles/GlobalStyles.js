@@ -56,4 +56,14 @@ img {
 export const CommonContainer = styled.div`
   padding-left: 20px;
   padding-right: 20px;
+
+  @media only screen and (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
 `;
