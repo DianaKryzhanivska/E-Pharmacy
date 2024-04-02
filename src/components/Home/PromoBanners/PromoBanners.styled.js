@@ -3,14 +3,32 @@ import { CommonContainer } from "styles/GlobalStyles";
 
 export const Container = styled(CommonContainer)`
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   background: ${({ theme }) => theme.colors.lightGray};
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    padding-top: 64px;
+    padding-bottom: 120px;
+  }
 `;
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media only screen and (min-width: 768px) {
+    width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 1020px;
+  }
 `;
 
 export const Banner = styled.li`
@@ -19,6 +37,10 @@ export const Banner = styled.li`
   border-radius: 27px;
   border: 1.155px solid #f1f1f1;
   box-shadow: 0px -1px 13.858px 0px rgba(29, 30, 33, 0.02);
+
+  @media only screen and (min-width: 768px) {
+    width: 321px;
+  }
 `;
 
 export const RoundWithTitle = styled.div`
@@ -40,6 +62,12 @@ export const Round = styled.div`
   font-size: 24px;
   font-weight: 400;
   line-height: 1em;
+
+  @media only screen and (min-width: 768px) {
+    width: 74px;
+    height: 74px;
+    font-size: 28px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -47,6 +75,10 @@ export const Title = styled.h3`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Box = styled.div`
@@ -54,6 +86,12 @@ export const Box = styled.div`
   width: 145px;
   align-items: baseline;
   justify-content: space-between;
+
+  @media only screen and (min-width: 768px) {
+    gap: 28px;
+    width: auto;
+    justify-content: flex-start;
+  }
 `;
 
 export const Percentage = styled.p`
@@ -61,6 +99,10 @@ export const Percentage = styled.p`
   font-size: 24px;
   font-weight: 500;
   line-height: 1.4em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 export const Btn = styled.button`
