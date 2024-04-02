@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="logo" viewBox="0 0 32 32">
+      <path fill="#85aa9f" d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z" style="fill:var(--color1, #85aa9f)"/>
+      <path fill="#fcfcfc" d="M16.354 15.2c4.755-3.586 4.965-5.76 0-9.6-5.06 3.922-4.408 6.001 0 9.6zM15.2 16.446c-3.586-4.755-5.76-4.965-9.6 0 3.922 5.06 6.001 4.408 9.6 0zm12 0c-3.586-4.755-5.76-4.965-9.6 0 3.922 5.06 6.001 4.408 9.6 0zM16.354 27.2c4.755-3.586 4.965-5.76 0-9.6-5.06 3.922-4.408 6.001 0 9.6z" style="fill:var(--color7, #fcfcfc)"/>
+    </symbol>
+    <symbol id="burger" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-width="2" d="M5.869 8.667h25.13M5.869 22h25.13M13.521 15.333h17.478"/>
+    </symbol>
+    <symbol id="close" viewBox="0 0 32 32">
+      <path fill="none" stroke="#fcfcfc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M24 8 8 24M8 8l16 16" style="stroke:var(--color7, #fcfcfc)"/>
+    </symbol>
+  </defs>
+</svg>
