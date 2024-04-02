@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.7acaea2f.css",
-    "main.js": "/E-Pharmacy/static/js/main.af1f7c13.js",
+    "main.js": "/E-Pharmacy/static/js/main.2b9792ff.js",
     "index.html": "/E-Pharmacy/index.html",
     "main.7acaea2f.css.map": "/E-Pharmacy/static/css/main.7acaea2f.css.map",
-    "main.af1f7c13.js.map": "/E-Pharmacy/static/js/main.af1f7c13.js.map"
+    "main.2b9792ff.js.map": "/E-Pharmacy/static/js/main.2b9792ff.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.af1f7c13.js"
+    "static/js/main.2b9792ff.js"
   ]
 }
