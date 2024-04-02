@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect } from "react";
 import { CloseBtn, Container, Content, Overlay } from "./Menu.styled";
 import sprite from "../../../images/sprite.svg";
+import NavLinks from "../NavLinks/NavLinks";
+import AuthLinks from "../AuthLinks/AuthLinks";
 
 const Menu = ({ isOpen, onClose }) => {
   const handleKeyDown = useCallback(
@@ -41,6 +43,8 @@ const Menu = ({ isOpen, onClose }) => {
                 <use href={`${sprite}#close`} />
               </svg>
             </CloseBtn>
+            <NavLinks />
+            <AuthLinks />
           </Container>
         </Content>
       </Overlay>

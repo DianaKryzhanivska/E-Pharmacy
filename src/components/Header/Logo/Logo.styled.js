@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const LogoBox = styled.div`
+export const NavLinkStyled = styled(NavLink)`
   display: flex;
   gap: 12px;
   align-items: center;
@@ -10,7 +11,7 @@ export const LogoBox = styled.div`
     height: 32px;
   }
 
-  & a {
+  & p {
     color: ${({ theme }) => theme.colors.black};
     font-size: 16px;
     font-weight: 600;

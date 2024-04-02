@@ -24,12 +24,14 @@ export const Content = styled.div`
 `;
 
 export const CloseBtn = styled.button`
+  position: absolute;
+  background: transparent;
+  top: 31px;
+  right: 20px;
+
   & svg {
     width: 32px;
     height: 32px;
-    position: absolute;
-    top: 31px;
-    right: 20px;
   }
 `;
 
