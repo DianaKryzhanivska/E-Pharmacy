@@ -12,7 +12,7 @@ export const Container = styled(CommonContainer)`
     padding-right: 122px;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1440px) {
     padding: 28px 98px 262px 100px;
   }
 `;
