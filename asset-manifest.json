@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/E-Pharmacy/static/css/main.7acaea2f.css",
-    "main.js": "/E-Pharmacy/static/js/main.32b09965.js",
+    "main.js": "/E-Pharmacy/static/js/main.c2cd4c81.js",
     "static/media/add-desk@2x.png": "/E-Pharmacy/static/media/add-desk@2x.19ebb500d02944238769.png",
     "static/media/add-tab@2x.png": "/E-Pharmacy/static/media/add-tab@2x.290b538c58de888df37e.png",
     "static/media/add-mob@1x.png": "/E-Pharmacy/static/media/add-mob@1x.97c536b0c48f3713c669.png",
@@ -10,14 +10,17 @@
     "static/media/add-mob@2x.png": "/E-Pharmacy/static/media/add-mob@2x.cc2d433975695bdaa471.png",
     "static/media/hero-desk@1x.png": "/E-Pharmacy/static/media/hero-desk@1x.0a6603650800b5cc2cf9.png",
     "static/media/hero-tab@1x.png": "/E-Pharmacy/static/media/hero-tab@1x.6a0463f4991675d0e94a.png",
+    "static/media/pill-tab@2x.png": "/E-Pharmacy/static/media/pill-tab@2x.3744de50a45703f5b1e4.png",
     "static/media/hero-mob@1x.png": "/E-Pharmacy/static/media/hero-mob@1x.cdb8ab7df02b4a72b40e.png",
+    "static/media/pill-mob@2x.png": "/E-Pharmacy/static/media/pill-mob@2x.603d8c6a4df1d14ade92.png",
+    "static/media/pill-tab@1x.png": "/E-Pharmacy/static/media/pill-tab@1x.57c96df92137806c1120.png",
     "static/media/sprite.svg": "/E-Pharmacy/static/media/sprite.526652b43c0aaf616db114e8eef73f5d.svg",
     "index.html": "/E-Pharmacy/index.html",
     "main.7acaea2f.css.map": "/E-Pharmacy/static/css/main.7acaea2f.css.map",
-    "main.32b09965.js.map": "/E-Pharmacy/static/js/main.32b09965.js.map"
+    "main.c2cd4c81.js.map": "/E-Pharmacy/static/js/main.c2cd4c81.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.32b09965.js"
+    "static/js/main.c2cd4c81.js"
   ]
 }
