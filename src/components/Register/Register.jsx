@@ -13,8 +13,15 @@ import Logo from "components/Header/Logo/Logo";
 import { NavLink } from "react-router-dom";
 import usualMob from "../../images/pill-mob@1x.png";
 import retinaMob from "../../images/pill-mob@2x.png";
+import usualTab from "../../images/pill-tab@1x.png";
+import retinaTab from "../../images/pill-tab@2x.png";
+import { useMediaQuery } from "react-responsive";
 
 const Register = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1439px)",
+  });
   return (
     <>
       <Container>
@@ -27,10 +34,18 @@ const Register = () => {
             <span>your healthcare</span> worries with us
           </Title>
           <ImgWrapper>
-            <img
-              srcSet={`${usualMob} 1x, ${retinaMob} 2x`}
-              alt="illustration"
-            />
+            {isMobile && (
+              <img
+                srcSet={`${usualMob} 1x, ${retinaMob} 2x`}
+                alt="illustration"
+              />
+            )}
+            {isTablet && (
+              <img
+                srcSet={`${usualTab} 1x, ${retinaTab} 2x`}
+                alt="illustration"
+              />
+            )}
           </ImgWrapper>
         </TitleBox>
         <form>

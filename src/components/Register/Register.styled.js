@@ -5,10 +5,20 @@ export const Container = styled(CommonContainer)`
   padding-top: 25px;
   padding-bottom: 191px;
   background: #f7f8fa;
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 28px;
+    padding-bottom: 250px;
+    padding-right: 122px;
+  }
 `;
 
 export const LogoWrapper = styled.div`
   margin-bottom: 106px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 168px;
+  }
 `;
 
 export const TitleBox = styled.div`
@@ -21,6 +31,11 @@ export const ImgWrapper = styled.div`
   top: -56px;
   right: 20px;
   z-index: -10;
+
+  @media only screen and (min-width: 768px) {
+    top: -104px;
+    right: 19px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -32,6 +47,13 @@ export const Title = styled.h2`
 
   & span {
     color: ${({ theme }) => theme.colors.green};
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: 54px;
+    line-height: 1.11em;
+    width: 614px;
+    margin-bottom: 54px;
   }
 `;
 
@@ -51,6 +73,16 @@ export const InputBox = styled.div`
     font-weight: 400;
     line-height: 1.5em;
   }
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 62px;
+
+    & input {
+      width: 280px;
+    }
+  }
 `;
 
 export const BtnBox = styled.div`
@@ -61,6 +93,14 @@ export const BtnBox = styled.div`
   & a {
     display: flex;
     justify-content: center;
+    color: rgba(29, 30, 33, 0.4);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 280px;
   }
 `;
 
@@ -75,4 +115,8 @@ export const SubmitBtn = styled.button`
   line-height: 1.28em;
   display: flex;
   justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+    padding: 13px 112px;
+  }
 `;
