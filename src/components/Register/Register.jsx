@@ -5,6 +5,7 @@ import {
   ImgWrapper,
   InputBox,
   LogoWrapper,
+  MainWrapper,
   SubmitBtn,
   Title,
   TitleBox,
@@ -19,8 +20,8 @@ import { useMediaQuery } from "react-responsive";
 
 const Register = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1439px)",
+  const isTabletOrDesktop = useMediaQuery({
+    query: "(min-width: 768px)",
   });
   return (
     <>
@@ -28,38 +29,40 @@ const Register = () => {
         <LogoWrapper>
           <Logo />
         </LogoWrapper>
-        <TitleBox>
-          <Title>
-            Your medication, delivered Say goodbye to all{" "}
-            <span>your healthcare</span> worries with us
-          </Title>
-          <ImgWrapper>
-            {isMobile && (
-              <img
-                srcSet={`${usualMob} 1x, ${retinaMob} 2x`}
-                alt="illustration"
-              />
-            )}
-            {isTablet && (
-              <img
-                srcSet={`${usualTab} 1x, ${retinaTab} 2x`}
-                alt="illustration"
-              />
-            )}
-          </ImgWrapper>
-        </TitleBox>
-        <form>
-          <InputBox>
-            <input type="text" placeholder="User Name" />
-            <input type="text" placeholder="Email address" />
-            <input type="text" placeholder="Phone number" />
-            <input type="password" placeholder="Password" />
-          </InputBox>
-          <BtnBox>
-            <SubmitBtn type="submit">Register</SubmitBtn>
-            <NavLink to="/login">Already have an account?</NavLink>
-          </BtnBox>
-        </form>
+        <MainWrapper>
+          <TitleBox>
+            <Title>
+              Your medication, delivered Say goodbye to all{" "}
+              <span>your healthcare</span> worries with us
+            </Title>
+            <ImgWrapper>
+              {isMobile && (
+                <img
+                  srcSet={`${usualMob} 1x, ${retinaMob} 2x`}
+                  alt="illustration"
+                />
+              )}
+              {isTabletOrDesktop && (
+                <img
+                  srcSet={`${usualTab} 1x, ${retinaTab} 2x`}
+                  alt="illustration"
+                />
+              )}
+            </ImgWrapper>
+          </TitleBox>
+          <form>
+            <InputBox>
+              <input type="text" placeholder="User Name" />
+              <input type="text" placeholder="Email address" />
+              <input type="text" placeholder="Phone number" />
+              <input type="password" placeholder="Password" />
+            </InputBox>
+            <BtnBox>
+              <SubmitBtn type="submit">Register</SubmitBtn>
+              <NavLink to="/login">Already have an account?</NavLink>
+            </BtnBox>
+          </form>
+        </MainWrapper>
       </Container>
     </>
   );

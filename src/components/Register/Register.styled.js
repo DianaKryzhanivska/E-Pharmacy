@@ -11,13 +11,29 @@ export const Container = styled(CommonContainer)`
     padding-bottom: 250px;
     padding-right: 122px;
   }
+
+  @media only screen and (min-width: 768px) {
+    padding: 28px 98px 262px 100px;
+  }
 `;
 
 export const LogoWrapper = styled.div`
+  width: 135px;
   margin-bottom: 106px;
 
   @media only screen and (min-width: 768px) {
+    width: 172px;
     margin-bottom: 168px;
+  }
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: 226px;
+  }
+`;
+
+export const MainWrapper = styled.div`
+  @media only screen and (min-width: 1440px) {
+    display: flex;
+    gap: 54px;
   }
 `;
 
