@@ -10,6 +10,10 @@ export const Container = styled(CommonContainer)`
     padding-top: 80px;
     padding-bottom: 120px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    padding-top: 100px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -22,17 +26,39 @@ export const Title = styled.h2`
   @media only screen and (min-width: 768px) {
     margin-bottom: 32px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
+`;
+
+export const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  @media only screen and (min-width: 768px) {
+    gap: 64px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 96x;
+  }
 `;
 
 export const Form = styled.form`
   padding: 20px 20px 40px;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 27px;
-  margin-bottom: 80px;
 
   @media only screen and (min-width: 768px) {
     padding: 40px 78px;
-    margin-bottom: 64px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 628px;
+    padding: 40px;
   }
 `;
 
@@ -101,9 +127,9 @@ export const InputBox = styled.div`
 `;
 
 export const PaymentBox = styled.div`
-  padding-top: 38px;
-  padding-bottom: 41px;
-  border-bottom: rgba(29, 30, 33, 0.1);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(29, 30, 33, 0.1);
 `;
 
 export const RadioBox = styled.div`
@@ -120,6 +146,10 @@ export const RadioBox = styled.div`
     display: flex;
     gap: 9px;
   }
+`;
+
+export const OrderBox = styled.div`
+  padding-top: 40px;
 `;
 
 export const TotalBox = styled.div`
