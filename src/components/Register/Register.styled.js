@@ -4,7 +4,7 @@ import { CommonContainer } from "styles/GlobalStyles";
 export const Container = styled(CommonContainer)`
   padding-top: 25px;
   padding-bottom: 191px;
-  background: #f7f8fa;
+  background: ${({ theme }) => theme.colors.lightGray};
 
   @media only screen and (min-width: 768px) {
     padding-top: 28px;
@@ -55,7 +55,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #1d1e21;
+  color: ${({ theme }) => theme.colors.black};
   font-size: 28px;
   font-weight: 600;
   line-height: 1.21em;

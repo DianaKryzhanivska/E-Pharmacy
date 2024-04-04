@@ -3,7 +3,7 @@ import { CommonContainer } from "styles/GlobalStyles";
 
 export const Container = styled(CommonContainer)`
   padding-bottom: 91px;
-  background: #f7f8fa;
+  background: ${({ theme }) => theme.colors.lightGray};
 
   @media only screen and (min-width: 768px) {
     padding-bottom: 130px;
@@ -122,7 +122,7 @@ export const Item = styled.li`
   display: flex;
   gap: 8px;
   align-items: center;
-  color: #1d1e21;
+  color: ${({ theme }) => theme.colors.black};
   font-size: 12px;
   font-weight: 600;
   line-height: 1.28em;
