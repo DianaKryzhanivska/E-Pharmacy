@@ -5,6 +5,11 @@ export const Container = styled(CommonContainer)`
   padding-top: 64px;
   padding-bottom: 80px;
   background: ${({ theme }) => theme.colors.lightGray};
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -13,6 +18,10 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.14em;
   margin-bottom: 40px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const Form = styled.form`
@@ -20,6 +29,11 @@ export const Form = styled.form`
   background: ${({ theme }) => theme.colors.white};
   border-radius: 27px;
   margin-bottom: 80px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 40px 78px;
+    margin-bottom: 64px;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -28,6 +42,11 @@ export const SubTitle = styled.h3`
   font-weight: 600;
   line-height: 1.4em;
   margin-bottom: 12px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
 `;
 
 export const Text = styled.p`
@@ -35,6 +54,11 @@ export const Text = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25em;
+  }
 `;
 
 export const InputBox = styled.div`
@@ -63,6 +87,16 @@ export const InputBox = styled.div`
     font-size: 12px;
     font-weight: 400;
     line-height: 1.5em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 14px;
+
+    & input {
+      min-width: 260px;
+    }
   }
 `;
 
@@ -103,6 +137,14 @@ export const TotalBox = styled.div`
     font-size: 16px;
     font-weight: 600;
     line-height: 1.4em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 20px 20px;
+
+    & p {
+      font-size: 18px;
+    }
   }
 `;
 
