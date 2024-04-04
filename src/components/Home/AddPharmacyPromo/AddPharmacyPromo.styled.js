@@ -4,15 +4,21 @@ import { CommonContainer } from "styles/GlobalStyles";
 export const Container = styled(CommonContainer)`
   padding-bottom: 91px;
   background: #f7f8fa;
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 130px;
+  }
 `;
 
 export const Wrapper = styled.div`
   padding: 40px 20px 20px 20px;
   border-radius: 32px;
   background: ${({ theme }) => theme.colors.green};
+  margin-bottom: 48px;
 
   @media only screen and (min-width: 768px) {
     padding: 104px 48px 40px;
+    margin-bottom: 73px;
   }
 
   @media only screen and (min-width: 1440px) {
@@ -96,5 +102,40 @@ export const ImgBox = styled.div`
       width: 633px;
       height: 406px;
     }
+  }
+`;
+
+export const FeaturesList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 43px;
+  row-gap: 16px;
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: 1440px) {
+    gap: 60px;
+  }
+`;
+
+export const Item = styled.li`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #1d1e21;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.28em;
+  letter-spacing: -0.28px;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25em;
+    letter-spacing: -0.32px;
   }
 `;

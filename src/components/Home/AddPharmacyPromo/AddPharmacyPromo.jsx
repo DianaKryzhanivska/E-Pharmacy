@@ -2,7 +2,9 @@ import React from "react";
 import {
   Btn,
   Container,
+  FeaturesList,
   ImgBox,
+  Item,
   Text,
   Title,
   Wrapper,
@@ -15,6 +17,7 @@ import retinaTab from "../../../images/add-tab@2x.png";
 import usualDesk from "../../../images/add-desk@1x.png";
 import retinaDesk from "../../../images/add-desk@2x.png";
 import { useMediaQuery } from "react-responsive";
+import sprite from "../../../images/sprite.svg";
 
 const AddPharmacyPromo = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -59,6 +62,38 @@ const AddPharmacyPromo = () => {
               )}
             </ImgBox>
           </Wrapper>
+          <FeaturesList>
+            <Item>
+              <svg>
+                <use href={`${sprite}#logo`} />
+              </svg>
+              Take user orders form online
+            </Item>
+            <Item>
+              <svg>
+                <use href={`${sprite}#logo`} />
+              </svg>
+              Create your shop profile
+            </Item>
+            <Item>
+              <svg>
+                <use href={`${sprite}#logo`} />
+              </svg>
+              Manage your store
+            </Item>
+            <Item>
+              <svg>
+                <use href={`${sprite}#logo`} />
+              </svg>
+              Get more orders
+            </Item>
+            <Item>
+              <svg>
+                <use href={`${sprite}#logo`} />
+              </svg>
+              Storage shed
+            </Item>
+          </FeaturesList>
         </Container>
       </section>
     </>
