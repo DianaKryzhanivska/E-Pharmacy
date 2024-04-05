@@ -6,12 +6,16 @@ import { BrowserRouter } from "react-router-dom";
 import { GlobalStyles } from "styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
-    <BrowserRouter basename="/E-Pharmacy">
-      <App />
-      <GlobalStyles />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter basename="/E-Pharmacy">
+        <App />
+        <GlobalStyles />
+      </BrowserRouter>
+    </Provider>
   </ThemeProvider>
 );
