@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCustomerReviews } from "../../../redux/pharmacy/selectors";
 import { getCustomerReviews } from "../../../redux/pharmacy/operations";
 import { useMediaQuery } from "react-responsive";
-import { Container, ImgBox, Item, Text, Title } from "./Reviews.styled";
+import { Container, ImgBox, Item, List, Text, Title } from "./Reviews.styled";
 
 const Reviews = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Reviews = () => {
         <Container>
           <Title>Reviews</Title>
           <Text>Search for Medicine, Filter by your location</Text>
-          <ul>
+          <List>
             {reviews?.map((review) => (
               <Item key={review._id}>
                 <ImgBox></ImgBox>
@@ -38,7 +38,7 @@ const Reviews = () => {
                 <p>{review.testimonial}</p>
               </Item>
             ))}
-          </ul>
+          </List>
         </Container>
       </section>
     </>
