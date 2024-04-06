@@ -57,6 +57,11 @@ export const List = styled.ul`
     gap: 32px 16px;
     width: 704px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    width: 1248px;
+    gap: 38px 36px;
+  }
 `;
 
 export const Item = styled.li`
@@ -69,6 +74,10 @@ export const Item = styled.li`
   @media only screen and (min-width: 768px) {
     min-width: 344px;
     padding: 40px 40px 46px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    min-width: 392px;
   }
 `;
 
@@ -165,6 +174,10 @@ export const RatingWithBtn = styled.div`
   @media only screen and (min-width: 768px) {
     top: 40px;
     right: 24px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    right: 40px;
   }
 `;
 
