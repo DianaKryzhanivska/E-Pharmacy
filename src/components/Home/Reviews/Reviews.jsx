@@ -22,7 +22,6 @@ const Reviews = () => {
       })
     );
   }, [dispatch, reviewsLimit]);
-  console.log(reviews);
 
   return (
     <>

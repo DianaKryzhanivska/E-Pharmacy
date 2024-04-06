@@ -7,7 +7,19 @@ export const getCustomerReviews = createAsyncThunk(
     try {
       const { limit = 3 } = body;
       const response = await instance.get(`/customer-reviews?limit=${limit}`);
-      console.log(response);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getNearestStores = createAsyncThunk(
+  "nearest-stores",
+  async (body, { rejectWithValue }) => {
+    try {
+      const { limit = 6 } = body;
+      const response = await instance.get(`/stores/nearest?limit=${limit}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
