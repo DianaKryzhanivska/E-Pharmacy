@@ -42,7 +42,7 @@ const NearestStores = () => {
                   <SubTitle>{store.name}</SubTitle>
                   <AddressBox>
                     <svg>
-                      <use href={`${sprite}#logo`} />
+                      <use href={`${sprite}#map`} />
                     </svg>
                     <ul>
                       <li>{store.address}</li>
@@ -51,14 +51,14 @@ const NearestStores = () => {
                   </AddressBox>
                   <PhoneBox>
                     <svg>
-                      <use href={`${sprite}#logo`} />
+                      <use href={`${sprite}#phone`} />
                     </svg>
                     <p>{store.phone}</p>
                   </PhoneBox>
                   <RatingWithBtn>
                     <RatingBox>
                       <svg>
-                        <use href={`${sprite}#logo`} />
+                        <use href={`${sprite}#star`} />
                       </svg>
                       <p>{store.rating}</p>
                     </RatingBox>

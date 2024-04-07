@@ -65,31 +65,31 @@ const AddPharmacyPromo = () => {
           <FeaturesList>
             <Item>
               <svg>
-                <use href={`${sprite}#logo`} />
+                <use href={`${sprite}#lightning`} />
               </svg>
               Take user orders form online
             </Item>
             <Item>
               <svg>
-                <use href={`${sprite}#logo`} />
+                <use href={`${sprite}#lightning`} />
               </svg>
               Create your shop profile
             </Item>
             <Item>
               <svg>
-                <use href={`${sprite}#logo`} />
+                <use href={`${sprite}#lightning`} />
               </svg>
               Manage your store
             </Item>
             <Item>
               <svg>
-                <use href={`${sprite}#logo`} />
+                <use href={`${sprite}#lightning`} />
               </svg>
               Get more orders
             </Item>
             <Item>
               <svg>
-                <use href={`${sprite}#logo`} />
+                <use href={`${sprite}#lightning`} />
               </svg>
               Storage shed
             </Item>

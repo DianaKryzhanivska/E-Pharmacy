@@ -8,17 +8,17 @@ const SocialMediaIcons = () => {
       <Wrapper>
         <Icon>
           <svg>
-            <use href={`${sprite}#close`} />
+            <use href={`${sprite}#facebook`} />
           </svg>
         </Icon>
         <Icon>
           <svg>
-            <use href={`${sprite}#close`} />
+            <use href={`${sprite}#instagram`} />
           </svg>
         </Icon>
         <Icon>
           <svg>
-            <use href={`${sprite}#close`} />
+            <use href={`${sprite}#youtube`} />
           </svg>
         </Icon>
       </Wrapper>
