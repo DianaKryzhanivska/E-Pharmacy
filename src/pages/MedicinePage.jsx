@@ -1,7 +1,12 @@
+import Medicine from "components/Medicine/Medicine";
 import React from "react";
 
 const MedicinePage = () => {
-  return <div></div>;
+  return (
+    <>
+      <Medicine />
+    </>
+  );
 };
 
 export default MedicinePage;

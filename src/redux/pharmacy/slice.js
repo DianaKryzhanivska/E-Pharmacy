@@ -3,6 +3,7 @@ import {
   getAllStores,
   getCustomerReviews,
   getNearestStores,
+  getSearchProducts,
 } from "./operations";
 
 const initialState = {
@@ -53,6 +54,18 @@ export const slice = createSlice({
         state.isLoading = true;
       })
       .addCase(getAllStores.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+      .addCase(getSearchProducts.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = null;
+        state.products = payload;
+      })
+      .addCase(getSearchProducts.pending, (state, { payload }) => {
+        state.isLoading = true;
+      })
+      .addCase(getSearchProducts.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
       });

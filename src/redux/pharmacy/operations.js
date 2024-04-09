@@ -31,8 +31,21 @@ export const getAllStores = createAsyncThunk(
   "all-stores",
   async (body, { rejectWithValue }) => {
     try {
-      const { limit = 9 } = body;
+      const { limit = "" } = body;
       const response = await instance.get(`/stores?limit=${limit}`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getSearchProducts = createAsyncThunk(
+  "products",
+  async (body, { rejectWithValue }) => {
+    try {
+      const { limit = "" } = body;
+      const response = await instance.get(`/products?&limit=${limit}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
