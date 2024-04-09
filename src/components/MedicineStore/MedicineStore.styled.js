@@ -2,40 +2,33 @@ import styled from "styled-components";
 import { CommonContainer } from "styles/GlobalStyles";
 
 export const Container = styled(CommonContainer)`
+  padding-top: 64px;
   padding-bottom: 80px;
   background: ${({ theme }) => theme.colors.lightGray};
 
   @media only screen and (min-width: 768px) {
+    padding-top: 80px;
     padding-bottom: 120px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 100px 128px 120px;
   }
 `;
 
 export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.black};
-  text-align: center;
   font-size: 28px;
   font-weight: 600;
   line-height: 1.14em;
-  margin-bottom: 14px;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 40px;
-    line-height: 1.2em;
-  }
-`;
-
-export const Text = styled.p`
-  color: ${({ theme }) => theme.colors.gray};
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.28em;
   margin-bottom: 40px;
 
   @media only screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.25em;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: 40px;
   }
 `;
 
@@ -60,7 +53,7 @@ export const List = styled.ul`
 
   @media only screen and (min-width: 1440px) {
     width: 1248px;
-    gap: 38px 36px;
+    gap: 40px 20px;
   }
 `;
 
@@ -73,11 +66,11 @@ export const Item = styled.li`
 
   @media only screen and (min-width: 768px) {
     min-width: 344px;
-    padding: 40px 40px 46px;
+    padding: 40px;
   }
 
   @media only screen and (min-width: 1440px) {
-    min-width: 392px;
+    min-width: 381px;
   }
 `;
 
@@ -94,7 +87,7 @@ export const SubTitle = styled.h3`
 
   @media only screen and (min-width: 768px) {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     max-width: 150px;
   }
 `;
@@ -148,6 +141,20 @@ export const PhoneBox = styled.div`
   @media only screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25em;
+    margin-bottom: 36px;
+  }
+`;
+
+export const VisitStoreBtn = styled.button`
+  & a {
+    display: block;
+    padding: 10px 16px;
+    background: ${({ theme }) => theme.colors.green};
+    border-radius: 24px;
+    color: ${({ theme }) => theme.colors.white};
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1em;
   }
 `;
 
@@ -172,11 +179,7 @@ export const RatingWithBtn = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    top: 40px;
-    right: 24px;
-  }
-
-  @media only screen and (min-width: 1440px) {
+    top: 202px;
     right: 40px;
   }
 `;

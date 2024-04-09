@@ -26,3 +26,16 @@ export const getNearestStores = createAsyncThunk(
     }
   }
 );
+
+export const getAllStores = createAsyncThunk(
+  "all-stores",
+  async (body, { rejectWithValue }) => {
+    try {
+      const { limit = 9 } = body;
+      const response = await instance.get(`/stores?limit=${limit}`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

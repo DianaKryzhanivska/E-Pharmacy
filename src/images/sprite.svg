@@ -3,7 +3,7 @@
     <symbol id="burger-green" viewBox="0 0 39 32">
       <path fill="none" stroke="#59b17a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.462" d="M34.877 16.255H5.339m29.538-6.4H5.339m29.538 12.8H5.339" style="stroke:var(--color1, #59b17a)"/>
     </symbol>
-    <symbol id="burger-white" viewBox="0 0 39 32">
+    <symbol id="burger" viewBox="0 0 39 32">
       <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.462" d="M34.877 16.255H5.339m29.538-6.4H5.339m29.538 12.8H5.339" style="stroke:var(--color2, #fff)"/>
     </symbol>
     <symbol id="close" viewBox="0 0 32 32">
@@ -65,6 +65,9 @@
     </symbol>
     <symbol id="shop" viewBox="0 0 32 32">
       <path fill="none" stroke="#59b17a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12.005 29.333a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667zm14.656 0a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667zM1.328 1.334h5.333l3.573 17.853a2.671 2.671 0 0 0 2.666 2.147h12.96a2.661 2.661 0 0 0 2.666-2.147L30.659 8H7.992" style="stroke:var(--color1, #59b17a)"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 32 32">
+      <path stroke-width="2.4" d="M12.4 9.394 16 2.572l3.6 6.822a2.2 2.2 0 0 0 1.571 1.141l7.601 1.315-5.376 5.532a2.2 2.2 0 0 0-.6 1.846l1.098 7.635-6.922-3.404a2.199 2.199 0 0 0-1.941 0l-6.922 3.404 1.098-7.635a2.2 2.2 0 0 0-.6-1.846L3.231 11.85l7.601-1.315a2.202 2.202 0 0 0 1.571-1.141zm16.635 2.185zM7.767 27.031z"/>
     </symbol>
     <symbol id="star-gray" viewBox="0 0 32 32">
       <path fill="#f1f1f1" stroke="#f1f1f1" stroke-width="2.4" d="M12.4 9.394 16 2.572l3.6 6.822a2.2 2.2 0 0 0 1.571 1.141l7.601 1.315-5.376 5.532a2.2 2.2 0 0 0-.6 1.846l1.098 7.635-6.922-3.404a2.199 2.199 0 0 0-1.941 0l-6.922 3.404 1.098-7.635a2.2 2.2 0 0 0-.6-1.846L3.231 11.85l7.601-1.315a2.202 2.202 0 0 0 1.571-1.141zm16.635 2.185zM7.767 27.031z" style="fill:var(--color5, #f1f1f1);stroke:var(--color5, #f1f1f1)"/>
