@@ -5,6 +5,15 @@ export const Container = styled(CommonContainer)`
   padding-top: 64px;
   padding-bottom: 80px;
   background: ${({ theme }) => theme.colors.lightGray};
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 100px 128px 120px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -13,12 +22,36 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.14em;
   margin-bottom: 40px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px 13px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    gap: 40px 21px;
+  }
+`;
+
+export const Item = styled.li`
+  @media only screen and (min-width: 768px) {
+    width: 226px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 280px;
+  }
 `;
 
 export const ImgBox = styled.div`
@@ -26,18 +59,23 @@ export const ImgBox = styled.div`
   border: 1.155px solid rgba(89, 177, 122, 0.6);
   overflow: hidden;
   margin-bottom: 8px;
+  object-fit: cover;
 
   & img {
-    width: 335px;
-    height: 300px;
+    width: 100%;
   }
 `;
 
 export const Info = styled.div`
-  position: relative;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 20px;
   padding: 20px;
+`;
+
+export const NameWithPriceBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
 `;
 
 export const SubTitle = styled.h3`
@@ -45,7 +83,14 @@ export const SubTitle = styled.h3`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4em;
-  margin-bottom: 4px;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Text = styled.p`
@@ -54,12 +99,13 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.5em;
   margin-bottom: 17px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 14px;
+  }
 `;
 
 export const Price = styled.p`
-  position: absolute;
-  top: 20px;
-  right: 20px;
   color: ${({ theme }) => theme.colors.black};
   font-size: 16px;
   font-weight: 600;

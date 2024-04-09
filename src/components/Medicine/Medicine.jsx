@@ -6,7 +6,9 @@ import {
   DetailsBtn,
   ImgBox,
   Info,
+  Item,
   List,
+  NameWithPriceBox,
   Price,
   SubTitle,
   Text,
@@ -37,20 +39,22 @@ const Medicine = () => {
           <Title>Medicine</Title>
           <List>
             {products?.map((product) => (
-              <li key={product._id}>
+              <Item key={product._id}>
                 <ImgBox>
                   <img src={product.photo} alt="product" />
                 </ImgBox>
                 <Info>
-                  <SubTitle>{product.name}</SubTitle>
+                  <NameWithPriceBox>
+                    <SubTitle>{product.name}</SubTitle>
+                    <Price>{`৳${product.price}`}</Price>
+                  </NameWithPriceBox>
                   <Text>{product.category}</Text>
-                  <Price>{`৳${product.price}`}</Price>
                   <BtnBox>
                     <AddToCartBtn type="button">Add to cart</AddToCartBtn>
                     <DetailsBtn type="button">Details</DetailsBtn>
                   </BtnBox>
                 </Info>
-              </li>
+              </Item>
             ))}
           </List>
         </Container>
