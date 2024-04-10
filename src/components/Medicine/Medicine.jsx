@@ -16,11 +16,16 @@ import {
 } from "./Medicine.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchProducts } from "../../redux/pharmacy/selectors";
-import { getSearchProducts } from "../../redux/pharmacy/operations";
+import {
+  getProductById,
+  getSearchProducts,
+} from "../../redux/pharmacy/operations";
+import { useNavigate } from "react-router-dom";
 
 const Medicine = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectSearchProducts);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(
@@ -30,7 +35,11 @@ const Medicine = () => {
     );
   }, [dispatch]);
 
-  console.log(products);
+  const handleDetailsClick = (id) => {
+    dispatch(getProductById(id)).then(() => {
+      navigate("/product");
+    });
+  };
 
   return (
     <>
@@ -51,7 +60,12 @@ const Medicine = () => {
                   <Text>{product.category}</Text>
                   <BtnBox>
                     <AddToCartBtn type="button">Add to cart</AddToCartBtn>
-                    <DetailsBtn type="button">Details</DetailsBtn>
+                    <DetailsBtn
+                      type="button"
+                      onClick={() => handleDetailsClick(product._id)}
+                    >
+                      Details
+                    </DetailsBtn>
                   </BtnBox>
                 </Info>
               </Item>

@@ -3,6 +3,7 @@ import {
   getAllStores,
   getCustomerReviews,
   getNearestStores,
+  getProductById,
   getSearchProducts,
 } from "./operations";
 
@@ -11,6 +12,7 @@ const initialState = {
   nearestStores: [],
   reviews: [],
   products: [],
+  product: null,
   cart: [],
   isLoading: false,
   error: null,
@@ -23,7 +25,6 @@ export const slice = createSlice({
     builder
       .addCase(getCustomerReviews.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = null;
         state.reviews = payload;
       })
       .addCase(getCustomerReviews.pending, (state, { payload }) => {
@@ -35,7 +36,6 @@ export const slice = createSlice({
       })
       .addCase(getNearestStores.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = null;
         state.nearestStores = payload;
       })
       .addCase(getNearestStores.pending, (state, { payload }) => {
@@ -47,7 +47,6 @@ export const slice = createSlice({
       })
       .addCase(getAllStores.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = null;
         state.stores = payload;
       })
       .addCase(getAllStores.pending, (state, { payload }) => {
@@ -59,13 +58,23 @@ export const slice = createSlice({
       })
       .addCase(getSearchProducts.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = null;
         state.products = payload;
       })
       .addCase(getSearchProducts.pending, (state, { payload }) => {
         state.isLoading = true;
       })
       .addCase(getSearchProducts.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
+      })
+      .addCase(getProductById.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.product = payload;
+      })
+      .addCase(getProductById.pending, (state, { payload }) => {
+        state.isLoading = true;
+      })
+      .addCase(getProductById.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
       });

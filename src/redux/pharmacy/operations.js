@@ -52,3 +52,15 @@ export const getSearchProducts = createAsyncThunk(
     }
   }
 );
+
+export const getProductById = createAsyncThunk(
+  "products/:id",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await instance.get(`/products/${id}`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

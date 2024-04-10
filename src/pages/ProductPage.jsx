@@ -1,7 +1,12 @@
+import Product from "components/Product/Product";
 import React from "react";
 
 const ProductPage = () => {
-  return <div></div>;
+  return (
+    <>
+      <Product />
+    </>
+  );
 };
 
 export default ProductPage;
