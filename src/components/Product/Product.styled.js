@@ -5,6 +5,33 @@ export const Container = styled(CommonContainer)`
   padding-top: 64px;
   padding-bottom: 80px;
   background: ${({ theme }) => theme.colors.lightGray};
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 62px;
+    padding-bottom: 120px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 100px 128px 120px;
+    display: flex;
+    gap: 20px;
+  }
+`;
+
+export const ImgInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 export const ImgBox = styled.div`
@@ -12,10 +39,21 @@ export const ImgBox = styled.div`
   object-fit: cover;
   border-radius: 27px;
   border: 1.155px solid rgba(89, 177, 122, 0.6);
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   & img {
     width: 100%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 364px;
+    height: 284px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    height: 337px;
   }
 `;
 
@@ -24,18 +62,42 @@ export const Info = styled.div`
   background: ${({ theme }) => theme.colors.white};
   padding: 20px;
   margin-bottom: 8px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 32px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 20px;
+  }
 `;
 
-export const NameWithPriceBox = styled.div`
+export const NamePriceBox = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 66px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+`;
+
+export const Name = styled.p`
+  color: ${({ theme }) => theme.colors.black};
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4em;
   margin-bottom: 4px;
 
-  & p {
-    color: ${({ theme }) => theme.colors.black};
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.4em;
+  @media only screen and (min-width: 768px) {
+    font-size: 20px;
   }
 `;
 
@@ -44,27 +106,44 @@ export const Text = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5em;
-  margin-bottom: 32px;
+`;
+
+export const Price = styled.p`
+  color: ${({ theme }) => theme.colors.black};
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const BtnBox = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (min-width: 768px) {
+    gap: 12px;
+  }
 `;
 
 export const AmountBox = styled.div`
   border-radius: 60px;
   border: 1px solid rgba(29, 30, 33, 0.1);
   padding: 12px 18px;
+  width: 108px;
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center;
 
   & button {
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
 
     & svg {
       width: 20px;
@@ -75,6 +154,7 @@ export const AmountBox = styled.div`
 
 export const AddToCartBtn = styled.button`
   padding: 13px 32px;
+  width: 140px;
   background: ${({ theme }) => theme.colors.green};
   border-radius: 60px;
   color: ${({ theme }) => theme.colors.white};
@@ -94,6 +174,14 @@ export const DescReviewBox = styled.div`
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.7px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 32px 32px 70px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding: 40px 40px 80px;
   }
 `;
 

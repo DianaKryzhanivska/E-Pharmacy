@@ -8,8 +8,11 @@ import {
   DescReviewBox,
   DescReviewBtnBox,
   ImgBox,
+  ImgInfoWrapper,
   Info,
-  NameWithPriceBox,
+  Name,
+  NamePriceBox,
+  Price,
   ReviewsBtn,
   Text,
 } from "./Product.styled";
@@ -23,32 +26,36 @@ const Product = () => {
     <>
       <section>
         <Container>
-          <ImgBox>
-            <img src={product.photo} alt="product" />
-          </ImgBox>
-          <Info>
-            <NameWithPriceBox>
-              <p>{product.name}</p>
-              <p>{`৳${product.price}`}</p>
-            </NameWithPriceBox>
-            <Text>{product.category}</Text>
-            <BtnBox>
-              <AmountBox>
-                <button type="button">
-                  <svg>
-                    <use href={`${sprite}#plus`} />
-                  </svg>
-                </button>
-                <p>0</p>
-                <button type="button">
-                  <svg>
-                    <use href={`${sprite}#minus`} />
-                  </svg>
-                </button>
-              </AmountBox>
-              <AddToCartBtn type="button">Add to cart</AddToCartBtn>
-            </BtnBox>
-          </Info>
+          <ImgInfoWrapper>
+            <ImgBox>
+              <img src={product.photo} alt="product" />
+            </ImgBox>
+            <Info>
+              <NamePriceBox>
+                <div>
+                  <Name>{product.name}</Name>
+                  <Text>{product.category}</Text>
+                </div>
+                <Price>{`৳${product.price}`}</Price>
+              </NamePriceBox>
+              <BtnBox>
+                <AmountBox>
+                  <button type="button">
+                    <svg>
+                      <use href={`${sprite}#plus`} />
+                    </svg>
+                  </button>
+                  <p>0</p>
+                  <button type="button">
+                    <svg>
+                      <use href={`${sprite}#minus`} />
+                    </svg>
+                  </button>
+                </AmountBox>
+                <AddToCartBtn type="button">Add to cart</AddToCartBtn>
+              </BtnBox>
+            </Info>
+          </ImgInfoWrapper>
           <DescReviewBox>
             <DescReviewBtnBox>
               <DescBtn type="button">Description</DescBtn>
