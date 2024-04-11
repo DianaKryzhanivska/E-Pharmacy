@@ -21,7 +21,6 @@ export const slice = createSlice({
     builder
       .addCase(registerThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.token = payload.token;
         state.user = payload.user;
       })
       .addCase(registerThunk.pending, (state) => {

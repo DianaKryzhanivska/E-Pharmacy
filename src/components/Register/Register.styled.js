@@ -79,7 +79,20 @@ export const InputBox = styled.div`
   gap: 10px;
   margin-bottom: 20px;
 
+  & label {
+    position: relative;
+  }
+
+  & span {
+    position: absolute;
+    bottom: -10px;
+    left: 18px;
+    color: red;
+    font-size: 12px;
+  }
+
   & input {
+    width: 100%;
     padding: 13px 18px;
     border-radius: 60px;
     border: 1px solid rgba(29, 30, 33, 0.1);
