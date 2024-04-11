@@ -28,3 +28,19 @@ export const registerThunk = createAsyncThunk(
     }
   }
 );
+
+export const loginThunk = createAsyncThunk(
+  "login",
+  async (body, { rejectWithValue }) => {
+    try {
+      const response = await instance.post("/user/login", body);
+      setToken(response.data.token);
+      localStorage.setItem("refreshToken", response.data.token);
+      localStorage.setItem("accessToken", response.data.token);
+      return response.data;
+    } catch (error) {
+      toast.error("Email or password is invalid");
+      return rejectWithValue(error.message);
+    }
+  }
+);

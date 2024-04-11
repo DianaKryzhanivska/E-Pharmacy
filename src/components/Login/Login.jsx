@@ -14,14 +14,36 @@ import {
   Title,
   TitleBox,
 } from "components/Register/Register.styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { InputBox, MainWrapper } from "./Login.styled";
+import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { loginThunk } from "../../redux/auth/operations";
+import { loginSchema } from "../../schemas/yupSchemas";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const isTabletOrDesktop = useMediaQuery({
     query: "(min-width: 768px)",
   });
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: loginSchema,
+    onSubmit: (values) => {
+      dispatch(loginThunk(values))
+        .unwrap()
+        .then(() => {
+          navigate("/home");
+        });
+    },
+  });
+
   return (
     <>
       <Container>
@@ -49,10 +71,34 @@ const Login = () => {
               )}
             </ImgWrapper>
           </TitleBox>
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <InputBox>
-              <input type="text" placeholder="Email address" />
-              <input type="password" placeholder="Password" />
+              <label htmlFor="email">
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="Email address"
+                  name="email"
+                  onChange={formik.handleChange}
+                  value={formik.values.email.trim()}
+                />
+                {formik.errors.email && formik.touched.email ? (
+                  <span>{formik.errors.email}</span>
+                ) : null}
+              </label>
+              <label htmlFor="password">
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={formik.handleChange}
+                  value={formik.values.password.trim()}
+                />
+                {formik.errors.password && formik.touched.password ? (
+                  <span>{formik.errors.password}</span>
+                ) : null}
+              </label>
             </InputBox>
             <BtnBox>
               <SubmitBtn type="submit">Login</SubmitBtn>

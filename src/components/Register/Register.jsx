@@ -74,7 +74,6 @@ const Register = () => {
               )}
             </ImgWrapper>
           </TitleBox>
-
           <form onSubmit={formik.handleSubmit}>
             <InputBox>
               <label htmlFor="name">
@@ -84,7 +83,7 @@ const Register = () => {
                   placeholder="User Name"
                   name="name"
                   onChange={formik.handleChange}
-                  value={formik.values.name}
+                  value={formik.values.name.trim()}
                 />
                 {formik.errors.name && formik.touched.name ? (
                   <span>{formik.errors.name}</span>
@@ -96,7 +95,7 @@ const Register = () => {
                   placeholder="Email address"
                   name="email"
                   onChange={formik.handleChange}
-                  value={formik.values.email}
+                  value={formik.values.email.trim()}
                 />
                 {formik.errors.email && formik.touched.email ? (
                   <span>{formik.errors.email}</span>
@@ -108,7 +107,7 @@ const Register = () => {
                   placeholder="Phone number"
                   name="phone"
                   onChange={formik.handleChange}
-                  value={formik.values.phone}
+                  value={formik.values.phone.trim()}
                 />
                 {formik.errors.phone && formik.touched.phone ? (
                   <span>{formik.errors.phone}</span>
@@ -120,7 +119,7 @@ const Register = () => {
                   placeholder="Password"
                   name="password"
                   onChange={formik.handleChange}
-                  value={formik.values.password}
+                  value={formik.values.password.trim()}
                 />
                 {formik.errors.password && formik.touched.password ? (
                   <span>{formik.errors.password}</span>
