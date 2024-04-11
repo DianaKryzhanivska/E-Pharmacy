@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import instance, { setToken } from "../instance";
+import instance, { clearToken, setToken } from "../instance";
 
 export const registerThunk = createAsyncThunk(
   "register",
@@ -40,6 +40,27 @@ export const loginThunk = createAsyncThunk(
       return response.data;
     } catch (error) {
       toast.error("Email or password is invalid");
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logoutThunk = createAsyncThunk(
+  "logout",
+  async (_, { rejectWithValue }) => {
+    try {
+      await instance.post("/user/logout");
+      clearToken();
+      localStorage.clear("refreshToken");
+      localStorage.clear("accessToken");
+    } catch (error) {
+      switch (error.response.status) {
+        case 401:
+          toast.error("You are not authorized to log out.");
+          break;
+        default:
+          toast.error("Something went wrong. Please try again later");
+      }
       return rejectWithValue(error.message);
     }
   }
