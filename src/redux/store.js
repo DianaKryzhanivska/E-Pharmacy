@@ -6,12 +6,27 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
+  persistReducer,
 } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import { configureStore } from "@reduxjs/toolkit";
 import { pharmacyReducer } from "./pharmacy/slice";
+import { authReducer } from "./auth/slice";
+
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token", "accessToken", "refreshToken"],
+};
+
+const pharmacyPersistConfig = {
+  key: "pharmacy",
+  storage,
+};
 
 const rootReducer = {
-  pharmacy: pharmacyReducer,
+  auth: persistReducer(authPersistConfig, authReducer),
+  pharmacy: persistReducer(pharmacyPersistConfig, pharmacyReducer),
 };
 
 export const store = configureStore({
