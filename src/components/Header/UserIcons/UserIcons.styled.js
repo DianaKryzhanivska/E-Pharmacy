@@ -57,9 +57,10 @@ export const UserIcon = styled.div`
   align-items: center;
   justify-content: center;
   color: ${({ theme }) => theme.colors.green};
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.4em;
+  text-transform: capitalize;
 
   @media only screen and (min-width: 768px) {
     width: 44px;

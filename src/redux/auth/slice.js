@@ -1,5 +1,10 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { loginThunk, logoutThunk, registerThunk } from "./operations";
+import {
+  getUserInfoThunk,
+  loginThunk,
+  logoutThunk,
+  registerThunk,
+} from "./operations";
 
 const initialState = {
   user: {
@@ -39,8 +44,17 @@ export const slice = createSlice({
           phone: "",
         };
       })
+      .addCase(getUserInfoThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user = payload.user;
+      })
       .addMatcher(
-        isAnyOf(registerThunk.pending, loginThunk.pending, logoutThunk.pending),
+        isAnyOf(
+          registerThunk.pending,
+          loginThunk.pending,
+          logoutThunk.pending,
+          getUserInfoThunk.pending
+        ),
         (state) => {
           state.isLoading = true;
         }
@@ -49,7 +63,8 @@ export const slice = createSlice({
         isAnyOf(
           registerThunk.rejected,
           loginThunk.rejected,
-          logoutThunk.rejected
+          logoutThunk.rejected,
+          getUserInfoThunk.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;
