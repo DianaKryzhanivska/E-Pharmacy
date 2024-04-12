@@ -1,14 +1,12 @@
 import React from "react";
-import sprite from "../../../images/sprite.svg";
+import logo from "../../../images/logo.png";
 import { NavLinkStyled } from "./Logo.styled";
 
 const Logo = () => {
   return (
     <>
       <NavLinkStyled to="/">
-        <svg>
-          <use href={`${sprite}#logo`} />
-        </svg>
+        <img src={logo} alt="logo" />
         <p>E-Pharmacy</p>
       </NavLinkStyled>
     </>

@@ -6,7 +6,7 @@ export const Container = styled(CommonContainer)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${({ theme }) => theme.colors.green};
+  background: ${({ theme }) => theme.colors.lightGray};
 
   @media only screen and (min-width: 768px) {
     padding-top: 28px;
@@ -18,6 +18,15 @@ export const Container = styled(CommonContainer)`
   }
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  gap: 10px;
+
+  @media only screen and (min-width: 768px) {
+    gap: 16px;
+  }
+`;
+
 export const BurgerBtn = styled.button`
   background: transparent;
   border: none;
@@ -25,6 +34,12 @@ export const BurgerBtn = styled.button`
   & svg {
     width: 32px;
     height: 26px;
-    stroke: #fff;
+    stroke: ${({ theme }) => theme.colors.green};
   }
+`;
+
+export const Box = styled.div`
+  display: flex;
+  gap: 12px;
+  align-items: center;
 `;

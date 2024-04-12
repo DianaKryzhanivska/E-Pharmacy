@@ -5,13 +5,11 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 14px;
   justify-content: center;
-  width: 127px;
   margin-left: auto;
   margin-right: auto;
 
   @media only screen and (min-width: 768px) {
     flex-direction: row;
-    width: 170px;
   }
 
   @media only screen and (min-width: 1440px) {
@@ -24,8 +22,8 @@ export const LogoutBtn = styled.button`
   background: transparent;
   padding: 13px 32px;
   border-radius: 60px;
-  color: ${({ theme }) => theme.colors.subWhite};
-  border: 1px solid ${({ theme }) => theme.borders.gray};
+  color: ${({ theme }) => theme.colors.green};
+  border: 1px solid rgba(89, 177, 122, 0.5);
   font-size: 14px;
   font-weight: 400;
   line-height: 1em;

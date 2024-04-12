@@ -6,13 +6,13 @@ export const NavLinkStyled = styled(NavLink)`
   gap: 12px;
   align-items: center;
 
-  & svg {
+  & img {
     width: 32px;
     height: 32px;
   }
 
   & p {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.48px;
@@ -21,7 +21,7 @@ export const NavLinkStyled = styled(NavLink)`
   @media only screen and (min-width: 768px) {
     gap: 14px;
 
-    & svg {
+    & img {
       width: 44px;
       height: 44px;
     }
