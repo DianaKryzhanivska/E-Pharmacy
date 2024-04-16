@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
+  cartCheckout,
   getAllStores,
   getCartItems,
   getCustomerReviews,
@@ -53,6 +54,10 @@ export const slice = createSlice({
         state.isLoading = false;
         state.cart = payload;
       })
+      .addCase(cartCheckout.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.cart = payload;
+      })
       .addMatcher(
         isAnyOf(
           getCustomerReviews.pending,
@@ -61,7 +66,8 @@ export const slice = createSlice({
           getSearchProducts.pending,
           getProductById.pending,
           getCartItems.pending,
-          updateCart.pending
+          updateCart.pending,
+          cartCheckout.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -75,7 +81,8 @@ export const slice = createSlice({
           getSearchProducts.rejected,
           getProductById.rejected,
           getCartItems.rejected,
-          updateCart.rejected
+          updateCart.rejected,
+          cartCheckout.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;

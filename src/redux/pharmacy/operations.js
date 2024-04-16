@@ -90,3 +90,16 @@ export const updateCart = createAsyncThunk(
     }
   }
 );
+
+export const cartCheckout = createAsyncThunk(
+  "cart-checkout",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const response = await instance.post("/cart/checkout", body);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
