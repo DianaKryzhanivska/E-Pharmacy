@@ -46,7 +46,7 @@ export const slice = createSlice({
       })
       .addCase(getCartItems.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.cart = payload.cartProducts;
+        state.cart = payload;
       })
       .addMatcher(
         isAnyOf(
