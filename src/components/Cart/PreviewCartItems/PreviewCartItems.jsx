@@ -6,10 +6,13 @@ import {
   BtnBox,
   ImgBox,
   Item,
+  List,
+  MainTextWrap,
   Price,
   RemoveBtn,
   Subtitle,
   Text,
+  TextBox,
 } from "./PreviewCartItems.styled";
 import sprite from "../../../images/sprite.svg";
 
@@ -18,16 +21,20 @@ const PreviewCartItems = () => {
   return (
     <>
       <div>
-        <ul>
+        <List>
           {cart?.cartProducts?.map((product) => (
             <Item key={product.productId._id}>
               <ImgBox>
                 <img src={product.productId.photo} alt="product" />
               </ImgBox>
-              <div>
-                <Subtitle>{product.productId.name}</Subtitle>
-                <Text>{product.productId.category}</Text>
-                <Price>{`৳ ${product.productId.price}`}</Price>
+              <TextBox>
+                <MainTextWrap>
+                  <div>
+                    <Subtitle>{product.productId.name}</Subtitle>
+                    <Text>{product.productId.category}</Text>
+                  </div>
+                  <Price>{`৳ ${product.productId.price}`}</Price>
+                </MainTextWrap>
                 <BtnBox>
                   <AmountBox>
                     <button type="button">
@@ -44,10 +51,10 @@ const PreviewCartItems = () => {
                   </AmountBox>
                   <RemoveBtn type="button">Remove</RemoveBtn>
                 </BtnBox>
-              </div>
+              </TextBox>
             </Item>
           ))}
-        </ul>
+        </List>
       </div>
     </>
   );

@@ -1,11 +1,30 @@
 import styled from "styled-components";
 
+export const List = styled.ul`
+  & li:first-child {
+    padding-top: 0;
+  }
+
+  & li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 460px;
+  }
+`;
+
 export const Item = styled.li`
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(29, 30, 33, 0.1);
   display: flex;
   gap: 12px;
+
+  @media only screen and (min-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 export const ImgBox = styled.div`
@@ -14,6 +33,28 @@ export const ImgBox = styled.div`
   border-radius: 27px;
   border: 1.155px solid #f1f1f1;
   overflow: hidden;
+
+  @media only screen and (min-width: 768px) {
+    width: 122px;
+    height: 133px;
+  }
+`;
+
+export const TextBox = styled.div`
+  width: 100%;
+`;
+
+export const MainTextWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 38px;
+  }
 `;
 
 export const Subtitle = styled.h3`
@@ -22,6 +63,10 @@ export const Subtitle = styled.h3`
   font-weight: 600;
   line-height: 1.4em;
   margin-bottom: 8px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Text = styled.p`
@@ -29,7 +74,11 @@ export const Text = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17em;
-  margin-bottom: 12px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.28em;
+  }
 `;
 
 export const Price = styled.p`
@@ -37,13 +86,21 @@ export const Price = styled.p`
   font-size: 12px;
   font-weight: 500;
   line-height: 1.17em;
-  margin-bottom: 18px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.28em;
+  }
 `;
 
 export const BtnBox = styled.div`
   display: flex;
   align-items: center;
   gap: 19px;
+
+  @media only screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 export const AmountBox = styled.div`
@@ -72,6 +129,16 @@ export const AmountBox = styled.div`
     font-size: 14px;
     font-weight: 400;
     line-height: 1.43em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 12px 18px;
+    width: 108px;
+
+    & p {
+      font-size: 16px;
+      line-height: 1.25em;
+    }
   }
 `;
 

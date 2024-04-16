@@ -12,7 +12,7 @@ export const Container = styled(CommonContainer)`
   }
 
   @media only screen and (min-width: 1440px) {
-    padding-top: 100px;
+    padding: 100px 128px 120px;
   }
 `;
 
@@ -43,6 +43,6 @@ export const MainWrapper = styled.div`
 
   @media only screen and (min-width: 1440px) {
     flex-direction: row;
-    gap: 96x;
+    gap: 96px;
   }
 `;
