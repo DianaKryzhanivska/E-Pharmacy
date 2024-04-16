@@ -77,3 +77,16 @@ export const getCartItems = createAsyncThunk(
     }
   }
 );
+
+export const updateCart = createAsyncThunk(
+  "cart-update",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const response = await instance.put("/cart/update", body);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

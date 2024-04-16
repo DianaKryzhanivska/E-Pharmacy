@@ -6,6 +6,7 @@ import {
   getNearestStores,
   getProductById,
   getSearchProducts,
+  updateCart,
 } from "./operations";
 
 const initialState = {
@@ -48,6 +49,10 @@ export const slice = createSlice({
         state.isLoading = false;
         state.cart = payload;
       })
+      .addCase(updateCart.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.cart = payload;
+      })
       .addMatcher(
         isAnyOf(
           getCustomerReviews.pending,
@@ -55,7 +60,8 @@ export const slice = createSlice({
           getAllStores.pending,
           getSearchProducts.pending,
           getProductById.pending,
-          getCartItems.pending
+          getCartItems.pending,
+          updateCart.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -68,7 +74,8 @@ export const slice = createSlice({
           getAllStores.rejected,
           getSearchProducts.rejected,
           getProductById.rejected,
-          getCartItems.rejected
+          getCartItems.rejected,
+          updateCart.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;
