@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import instance from "../instance";
+import instance, { setToken } from "../instance";
 
 export const getCustomerReviews = createAsyncThunk(
   "reviews",
@@ -58,6 +58,19 @@ export const getProductById = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await instance.get(`/products/${id}`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getCartItems = createAsyncThunk(
+  "cart-items",
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const response = await instance.get("/cart");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

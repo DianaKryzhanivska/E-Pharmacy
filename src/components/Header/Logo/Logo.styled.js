@@ -9,6 +9,7 @@ export const NavLinkStyled = styled(NavLink)`
   & img {
     width: 32px;
     height: 32px;
+    background: ${({ theme }) => theme.colors.lightGray};
   }
 
   & p {

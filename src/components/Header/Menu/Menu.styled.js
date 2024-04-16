@@ -37,6 +37,7 @@ export const CloseBtn = styled.button`
   & svg {
     width: 32px;
     height: 32px;
+    stroke: #fff;
   }
 `;
 

@@ -1,6 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   getAllStores,
+  getCartItems,
   getCustomerReviews,
   getNearestStores,
   getProductById,
@@ -27,57 +28,53 @@ export const slice = createSlice({
         state.isLoading = false;
         state.reviews = payload;
       })
-      .addCase(getCustomerReviews.pending, (state, { payload }) => {
-        state.isLoading = true;
-      })
-      .addCase(getCustomerReviews.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
       .addCase(getNearestStores.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.nearestStores = payload;
-      })
-      .addCase(getNearestStores.pending, (state, { payload }) => {
-        state.isLoading = true;
-      })
-      .addCase(getNearestStores.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
       })
       .addCase(getAllStores.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.stores = payload;
       })
-      .addCase(getAllStores.pending, (state, { payload }) => {
-        state.isLoading = true;
-      })
-      .addCase(getAllStores.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
       .addCase(getSearchProducts.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.products = payload;
-      })
-      .addCase(getSearchProducts.pending, (state, { payload }) => {
-        state.isLoading = true;
-      })
-      .addCase(getSearchProducts.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
       })
       .addCase(getProductById.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.product = payload;
       })
-      .addCase(getProductById.pending, (state, { payload }) => {
-        state.isLoading = true;
-      })
-      .addCase(getProductById.rejected, (state, { payload }) => {
+      .addCase(getCartItems.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.error = payload;
-      });
+        state.cart = payload.cartProducts;
+      })
+      .addMatcher(
+        isAnyOf(
+          getCustomerReviews.pending,
+          getNearestStores.pending,
+          getAllStores.pending,
+          getSearchProducts.pending,
+          getProductById.pending,
+          getCartItems.pending
+        ),
+        (state) => {
+          state.isLoading = true;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          getCustomerReviews.rejected,
+          getNearestStores.rejected,
+          getAllStores.rejected,
+          getSearchProducts.rejected,
+          getProductById.rejected,
+          getCartItems.rejected
+        ),
+        (state, { payload }) => {
+          state.isLoading = false;
+          state.error = payload;
+        }
+      );
   },
 });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Form,
@@ -13,8 +13,17 @@ import {
   Title,
   TotalBox,
 } from "./Cart.styled";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCart } from "../../redux/pharmacy/selectors";
+import { getCartItems } from "../../redux/pharmacy/operations";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector(selectCart);
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, [dispatch]);
+  console.log(cart);
   return (
     <>
       <section>
