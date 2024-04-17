@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import instance, { setToken } from "../instance";
+import { toast } from "react-toastify";
 
 export const getCustomerReviews = createAsyncThunk(
   "reviews",
@@ -97,6 +98,21 @@ export const cartCheckout = createAsyncThunk(
     try {
       setToken(getState().auth.token);
       const response = await instance.post("/cart/checkout", body);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteFromCart = createAsyncThunk(
+  "cart-remove",
+  async (id, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      console.log(id);
+      const response = await instance.delete(`/cart/remove/${id}`);
+      toast.success("Product removed from cart");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import {
   AmountBox,
@@ -15,9 +15,17 @@ import {
   TextBox,
 } from "./PreviewCartItems.styled";
 import sprite from "../../../images/sprite.svg";
+import { deleteFromCart } from "../../../redux/pharmacy/operations";
 
 const PreviewCartItems = () => {
+  const dispatch = useDispatch();
   const cart = useSelector(selectCart);
+
+  const handleDeleteProduct = (id) => {
+    console.log(id);
+    dispatch(deleteFromCart(id));
+  };
+
   return (
     <>
       <div>
@@ -49,7 +57,12 @@ const PreviewCartItems = () => {
                       </svg>
                     </button>
                   </AmountBox>
-                  <RemoveBtn type="button">Remove</RemoveBtn>
+                  <RemoveBtn
+                    type="button"
+                    onClick={() => handleDeleteProduct(product.productId._id)}
+                  >
+                    Remove
+                  </RemoveBtn>
                 </BtnBox>
               </TextBox>
             </Item>

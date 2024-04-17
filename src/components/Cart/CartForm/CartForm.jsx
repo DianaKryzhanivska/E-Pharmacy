@@ -15,7 +15,7 @@ import { selectCart } from "../../../redux/pharmacy/selectors";
 
 const CartForm = () => {
   const cart = useSelector(selectCart);
-  const total = cart?.total.toFixed(2);
+  const total = Number(cart?.total).toFixed(2) || 0;
   return (
     <>
       <Form>
