@@ -12,10 +12,11 @@ const UserIcons = () => {
   const navigate = useNavigate();
   const user = useSelector(selectUser);
   const cart = useSelector(selectCart);
+  const cartItemsQuantity = cart?.cartProducts?.length || 0;
 
   useEffect(() => {
     dispatch(getCartItems());
-  }, [dispatch]);
+  }, [dispatch, cartItemsQuantity]);
 
   const handleCartClick = () => {
     navigate("/cart");
@@ -28,7 +29,7 @@ const UserIcons = () => {
           <svg>
             <use href={`${sprite}#shop`} />
           </svg>
-          <CartItems>{cart?.cartProducts?.length}</CartItems>
+          <CartItems>{cartItemsQuantity}</CartItems>
         </CartBtn>
         <UserIcon>{user?.name[0]}</UserIcon>
       </Wrapper>

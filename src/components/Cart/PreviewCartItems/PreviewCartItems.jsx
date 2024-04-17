@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import {
@@ -15,11 +15,19 @@ import {
   TextBox,
 } from "./PreviewCartItems.styled";
 import sprite from "../../../images/sprite.svg";
-import { deleteFromCart } from "../../../redux/pharmacy/operations";
+import {
+  deleteFromCart,
+  getCartItems,
+} from "../../../redux/pharmacy/operations";
 
 const PreviewCartItems = () => {
   const dispatch = useDispatch();
   const cart = useSelector(selectCart);
+  const cartItemsQuantity = cart?.cartProducts?.length || 0;
+
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, [dispatch, cartItemsQuantity]);
 
   const handleDeleteProduct = (id) => {
     console.log(id);

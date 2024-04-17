@@ -17,6 +17,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchProducts } from "../../redux/pharmacy/selectors";
 import {
+  addToCart,
   getProductById,
   getSearchProducts,
 } from "../../redux/pharmacy/operations";
@@ -34,6 +35,15 @@ const Medicine = () => {
       })
     );
   }, [dispatch]);
+
+  const handleAddToCart = (id) => {
+    dispatch(
+      addToCart({
+        productId: id,
+        quantity: 1,
+      })
+    );
+  };
 
   const handleDetailsClick = (id) => {
     dispatch(getProductById(id)).then(() => {
@@ -59,7 +69,12 @@ const Medicine = () => {
                   </NameWithPriceBox>
                   <Text>{product.category}</Text>
                   <BtnBox>
-                    <AddToCartBtn type="button">Add to cart</AddToCartBtn>
+                    <AddToCartBtn
+                      type="button"
+                      onClick={() => handleAddToCart(product._id)}
+                    >
+                      Add to cart
+                    </AddToCartBtn>
                     <DetailsBtn
                       type="button"
                       onClick={() => handleDetailsClick(product._id)}

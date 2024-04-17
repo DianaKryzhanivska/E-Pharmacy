@@ -119,3 +119,17 @@ export const deleteFromCart = createAsyncThunk(
     }
   }
 );
+
+export const addToCart = createAsyncThunk(
+  "cart-add",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const response = await instance.patch("/cart/add", body);
+      toast.success("Product added to cart");
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
