@@ -2,6 +2,7 @@ import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   addToCart,
   cartCheckout,
+  decreaseQuantity,
   deleteFromCart,
   getAllStores,
   getCartItems,
@@ -68,6 +69,10 @@ export const slice = createSlice({
         state.isLoading = false;
         state.cart = payload;
       })
+      .addCase(decreaseQuantity.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.cart = payload;
+      })
       .addMatcher(
         isAnyOf(
           getCustomerReviews.pending,
@@ -79,7 +84,8 @@ export const slice = createSlice({
           updateCart.pending,
           cartCheckout.pending,
           deleteFromCart.pending,
-          addToCart.pending
+          addToCart.pending,
+          decreaseQuantity.pending
         ),
         (state) => {
           state.isLoading = true;
@@ -96,7 +102,8 @@ export const slice = createSlice({
           updateCart.rejected,
           cartCheckout.rejected,
           deleteFromCart.rejected,
-          addToCart.rejected
+          addToCart.rejected,
+          decreaseQuantity.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;

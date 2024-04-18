@@ -133,3 +133,16 @@ export const addToCart = createAsyncThunk(
     }
   }
 );
+
+export const decreaseQuantity = createAsyncThunk(
+  "cart-decrease",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const response = await instance.patch("/cart/decrease", body);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
