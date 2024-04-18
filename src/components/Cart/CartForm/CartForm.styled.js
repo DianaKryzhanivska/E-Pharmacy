@@ -56,6 +56,11 @@ export const InputBox = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    & span {
+      color: red;
+      font-size: 12px;
+    }
   }
 
   & input {
@@ -98,6 +103,11 @@ export const RadioBox = styled.div`
     line-height: 1.28em;
     display: flex;
     gap: 9px;
+  }
+
+  & span {
+    color: red;
+    font-size: 12px;
   }
 `;
 

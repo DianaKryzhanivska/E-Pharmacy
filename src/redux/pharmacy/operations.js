@@ -98,8 +98,10 @@ export const cartCheckout = createAsyncThunk(
     try {
       setToken(getState().auth.token);
       const response = await instance.post("/cart/checkout", body);
+      toast.success("The order is successful. Wait for a call to confirm.");
       return response.data;
     } catch (error) {
+      toast.error("Something went wrong. Please try again.");
       return rejectWithValue(error.message);
     }
   }
