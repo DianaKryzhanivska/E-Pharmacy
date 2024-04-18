@@ -6,11 +6,11 @@ import {
   Text,
   TextWrapper,
 } from "./Footer.styled";
-import Logo from "components/Header/Logo/Logo";
 import NavLinks from "./NavLinks/NavLinks";
 import Bottom from "./Bottom/Bottom";
 import { useMediaQuery } from "react-responsive";
 import SocialMediaIcons from "./SocialMediaIcons/SocialMediaIcons";
+import Logo from "./Logo/Logo";
 
 const Footer = () => {
   const isTabletOrDesktop = useMediaQuery({

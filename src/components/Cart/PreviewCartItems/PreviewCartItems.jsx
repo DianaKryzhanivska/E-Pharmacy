@@ -16,6 +16,7 @@ import {
 } from "./PreviewCartItems.styled";
 import sprite from "../../../images/sprite.svg";
 import {
+  addToCart,
   deleteFromCart,
   getCartItems,
 } from "../../../redux/pharmacy/operations";
@@ -28,6 +29,15 @@ const PreviewCartItems = () => {
   useEffect(() => {
     dispatch(getCartItems());
   }, [dispatch, cartItemsQuantity]);
+
+  const handleIncreaseAmount = (id) => {
+    dispatch(
+      addToCart({
+        productId: id,
+        quantity: 1,
+      })
+    );
+  };
 
   const handleDeleteProduct = (id) => {
     console.log(id);
@@ -53,7 +63,12 @@ const PreviewCartItems = () => {
                 </MainTextWrap>
                 <BtnBox>
                   <AmountBox>
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleIncreaseAmount(product.productId._id)
+                      }
+                    >
                       <svg>
                         <use href={`${sprite}#plus`} />
                       </svg>
