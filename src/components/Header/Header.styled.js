@@ -34,7 +34,8 @@ export const BurgerBtn = styled.button`
   & svg {
     width: 32px;
     height: 26px;
-    stroke: ${({ theme }) => theme.colors.green};
+    stroke: ${({ theme, pageType }) =>
+      pageType === "home" ? theme.colors.white : theme.colors.green};
   }
 `;
 

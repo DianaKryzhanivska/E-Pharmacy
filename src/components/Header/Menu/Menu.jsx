@@ -4,7 +4,7 @@ import sprite from "../../../images/sprite.svg";
 import NavLinks from "../NavLinks/NavLinks";
 import AuthLinks from "../AuthLinks/AuthLinks";
 
-const Menu = ({ isOpen, onClose }) => {
+const Menu = ({ isOpen, onClose, pageType }) => {
   const handleKeyDown = useCallback(
     (e) => {
       if (e.key === "Escape") {
@@ -44,7 +44,7 @@ const Menu = ({ isOpen, onClose }) => {
               </svg>
             </CloseBtn>
             <NavLinks />
-            <AuthLinks />
+            <AuthLinks pageType={pageType} />
           </Container>
         </Content>
       </Overlay>

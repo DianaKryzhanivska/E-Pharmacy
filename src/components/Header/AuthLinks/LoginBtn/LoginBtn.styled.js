@@ -6,4 +6,8 @@ export const Btn = styled.button`
   font-size: 14px;
   font-weight: 400;
   text-decoration: underline;
+
+  @media only screen and (min-width: 1440px) {
+    color: ${({ pageType }) => (pageType === "home" ? "#F1F1F1" : "#59B17A")};
+  }
 `;

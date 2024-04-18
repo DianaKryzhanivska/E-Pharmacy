@@ -13,4 +13,12 @@ export const Btn = styled.button`
   @media only screen and (min-width: 768px) {
     padding: 16px 32px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    color: ${({ pageType }) => (pageType === "home" ? "#F1F1F1" : "#59B17A")};
+    border: ${({ pageType }) =>
+      pageType === "home"
+        ? "1px solid rgba(241, 241, 241, 0.50)"
+        : "1px solid rgba(89, 177, 122, 0.50)"};
+  }
 `;

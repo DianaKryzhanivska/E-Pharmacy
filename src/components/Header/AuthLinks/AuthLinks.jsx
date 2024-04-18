@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../../redux/auth/selectors";
 import { logoutThunk } from "../../../redux/auth/operations";
 
-const AuthLinks = () => {
+const AuthLinks = ({ pageType }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -18,11 +18,13 @@ const AuthLinks = () => {
     <>
       <Wrapper>
         {isLoggedIn ? (
-          <LogoutBtn onClick={handleLogoutClick}>Log out</LogoutBtn>
+          <LogoutBtn pageType={pageType} onClick={handleLogoutClick}>
+            Log out
+          </LogoutBtn>
         ) : (
           <>
-            <RegisterBtn />
-            <LoginBtn />
+            <RegisterBtn pageType={pageType} />
+            <LoginBtn pageType={pageType} />
           </>
         )}
       </Wrapper>

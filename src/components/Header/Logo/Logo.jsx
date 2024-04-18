@@ -2,12 +2,14 @@ import React from "react";
 import logo from "../../../images/logo.png";
 import { NavLinkStyled } from "./Logo.styled";
 
-const Logo = () => {
+const Logo = ({ pageType }) => {
+  const logoColor = pageType === "home" ? "#FFF" : "#1D1E21";
+
   return (
     <>
       <NavLinkStyled to="/home">
         <img src={logo} alt="logo" />
-        <p>E-Pharmacy</p>
+        <p style={{ color: logoColor }}>E-Pharmacy</p>
       </NavLinkStyled>
     </>
   );

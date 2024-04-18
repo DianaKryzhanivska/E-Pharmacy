@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const CartBtn = styled.button`
   position: relative;
-  background: ${({ theme }) => theme.colors.white};
+  background: #f1f1f1;
   box-shadow: 0px -1px 7px rgba(71, 71, 71, 0.05);
   border-radius: 50%;
   width: 40px;
@@ -53,6 +53,7 @@ export const UserIcon = styled.div`
   width: 40px;
   height: 40px;
   background: rgba(89, 177, 122, 0.1);
+  box-shadow: 0px -1px 7px rgba(71, 71, 71, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;

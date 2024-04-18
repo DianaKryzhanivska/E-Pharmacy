@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import { getCartItems } from "../../../redux/pharmacy/operations";
 
-const UserIcons = () => {
+const UserIcons = ({ pageType }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector(selectUser);
@@ -22,6 +22,9 @@ const UserIcons = () => {
     navigate("/cart");
   };
 
+  const iconBackground =
+    pageType === "home" ? "#F1F1F1" : "rgba(89, 177, 122, 0.10)";
+
   return (
     <>
       <Wrapper>
@@ -31,7 +34,9 @@ const UserIcons = () => {
           </svg>
           <CartItems>{cartItemsQuantity}</CartItems>
         </CartBtn>
-        <UserIcon>{user?.name[0]}</UserIcon>
+        <UserIcon style={{ background: iconBackground }}>
+          {user?.name[0]}
+        </UserIcon>
       </Wrapper>
     </>
   );

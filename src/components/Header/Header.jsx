@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import UserIcons from "./UserIcons/UserIcons";
 
-const Header = () => {
+const Header = ({ pageType }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const isDesktop = useMediaQuery({
@@ -27,15 +27,21 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const headerBackground = pageType === "home" ? "#59B17A" : "#F7F8FA";
+
   return (
     <>
       <header>
-        <Container>
-          <Logo />
+        <Container style={{ background: headerBackground }}>
+          <Logo pageType={pageType} />
           {isLoggedIn && !isDesktop && (
             <Wrapper>
-              <UserIcons />
-              <BurgerBtn type="button" onClick={handleOpenMenu}>
+              <UserIcons pageType={pageType} />
+              <BurgerBtn
+                type="button"
+                pageType={pageType}
+                onClick={handleOpenMenu}
+              >
                 <svg>
                   <use href={`${sprite}#burger`} />
                 </svg>
@@ -43,7 +49,11 @@ const Header = () => {
             </Wrapper>
           )}
           {!isLoggedIn && !isDesktop && (
-            <BurgerBtn type="button" onClick={handleOpenMenu}>
+            <BurgerBtn
+              type="button"
+              pageType={pageType}
+              onClick={handleOpenMenu}
+            >
               <svg>
                 <use href={`${sprite}#burger`} />
               </svg>
@@ -53,20 +63,20 @@ const Header = () => {
             <>
               <NavLinks />
               <Box>
-                <UserIcons />
-                <AuthLinks />
+                <UserIcons pageType={pageType} />
+                <AuthLinks pageType={pageType} />
               </Box>
             </>
           )}
           {!isLoggedIn && isDesktop && (
             <>
               <NavLinks />
-              <AuthLinks />
+              <AuthLinks pageType={pageType} />
             </>
           )}
         </Container>
       </header>
-      <Menu isOpen={isMenuOpen} onClose={handleCloseMenu} />
+      <Menu isOpen={isMenuOpen} onClose={handleCloseMenu} pageType={pageType} />
     </>
   );
 };
