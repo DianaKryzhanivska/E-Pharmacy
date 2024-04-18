@@ -17,6 +17,7 @@ import {
 import sprite from "../../../images/sprite.svg";
 import {
   addToCart,
+  decreaseQuantity,
   deleteFromCart,
   getCartItems,
 } from "../../../redux/pharmacy/operations";
@@ -33,6 +34,15 @@ const PreviewCartItems = () => {
   const handleIncreaseAmount = (id) => {
     dispatch(
       addToCart({
+        productId: id,
+        quantity: 1,
+      })
+    );
+  };
+
+  const handleDecreaseAmount = (id) => {
+    dispatch(
+      decreaseQuantity({
         productId: id,
         quantity: 1,
       })
@@ -74,7 +84,12 @@ const PreviewCartItems = () => {
                       </svg>
                     </button>
                     <p>{product.quantity}</p>
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleDecreaseAmount(product.productId._id)
+                      }
+                    >
                       <svg>
                         <use href={`${sprite}#minus`} />
                       </svg>
