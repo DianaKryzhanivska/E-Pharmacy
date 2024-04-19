@@ -16,6 +16,11 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28em;
   margin-bottom: 25px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25em;
+  }
 `;
 
 export const InputBox = styled.div`
@@ -33,6 +38,10 @@ export const InputBox = styled.div`
     font-size: 12px;
     font-weight: 400;
     line-height: 1.5em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 14px;
   }
 `;
 
