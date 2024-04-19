@@ -20,6 +20,9 @@ const initialState = {
   products: [],
   product: null,
   cart: [],
+  currentPage: 1,
+  totalPages: null,
+  totalProducts: null,
   isLoading: false,
   error: null,
 };
@@ -27,6 +30,11 @@ const initialState = {
 export const slice = createSlice({
   name: "pharmacy",
   initialState,
+  reducers: {
+    setCurrentPage: (state, { payload }) => {
+      state.currentPage = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCustomerReviews.fulfilled, (state, { payload }) => {
@@ -43,7 +51,10 @@ export const slice = createSlice({
       })
       .addCase(getSearchProducts.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.products = payload;
+        state.products = payload.products;
+        state.currentPage = payload.currentPage;
+        state.totalPages = payload.totalPages;
+        state.totalProducts = payload.totalProducts;
       })
       .addCase(getProductById.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -112,5 +123,7 @@ export const slice = createSlice({
       );
   },
 });
+
+export const { setCurrentPage } = slice.actions;
 
 export const pharmacyReducer = slice.reducer;

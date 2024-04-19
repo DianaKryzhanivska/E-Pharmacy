@@ -15,7 +15,10 @@ import {
   Title,
 } from "./Medicine.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSearchProducts } from "../../redux/pharmacy/selectors";
+import {
+  selectSearchProducts,
+  selectTotalPages,
+} from "../../redux/pharmacy/selectors";
 import { addToCart, getProductById } from "../../redux/pharmacy/operations";
 import { useNavigate } from "react-router-dom";
 import Modal from "components/Modal/Modal";
@@ -23,10 +26,12 @@ import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import SignIn from "components/Modal/SignIn/SignIn";
 import SignUp from "components/Modal/SignUp/SignUp";
 import Filter from "./Filter/Filter";
+import Pagination from "./Pagination/Pagination";
 
 const Medicine = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectSearchProducts);
+  const totalPages = useSelector(selectTotalPages);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -73,36 +78,42 @@ const Medicine = () => {
         <Container>
           <Title>Medicine</Title>
           <Filter />
+
           <List>
-            {products?.map((product) => (
-              <Item key={product._id}>
-                <ImgBox>
-                  <img src={product.photo} alt="product" />
-                </ImgBox>
-                <Info>
-                  <NameWithPriceBox>
-                    <SubTitle>{product.name}</SubTitle>
-                    <Price>{`৳${product.price}`}</Price>
-                  </NameWithPriceBox>
-                  <Text>{product.category}</Text>
-                  <BtnBox>
-                    <AddToCartBtn
-                      type="button"
-                      onClick={() => handleAddToCart(product._id)}
-                    >
-                      Add to cart
-                    </AddToCartBtn>
-                    <DetailsBtn
-                      type="button"
-                      onClick={() => handleDetailsClick(product._id)}
-                    >
-                      Details
-                    </DetailsBtn>
-                  </BtnBox>
-                </Info>
-              </Item>
-            ))}
+            {products && products.length > 0 ? (
+              products?.map((product) => (
+                <Item key={product._id}>
+                  <ImgBox>
+                    <img src={product.photo} alt="product" />
+                  </ImgBox>
+                  <Info>
+                    <NameWithPriceBox>
+                      <SubTitle>{product.name}</SubTitle>
+                      <Price>{`৳${product.price}`}</Price>
+                    </NameWithPriceBox>
+                    <Text>{product.category}</Text>
+                    <BtnBox>
+                      <AddToCartBtn
+                        type="button"
+                        onClick={() => handleAddToCart(product._id)}
+                      >
+                        Add to cart
+                      </AddToCartBtn>
+                      <DetailsBtn
+                        type="button"
+                        onClick={() => handleDetailsClick(product._id)}
+                      >
+                        Details
+                      </DetailsBtn>
+                    </BtnBox>
+                  </Info>
+                </Item>
+              ))
+            ) : (
+              <p>Nothing was found for your request</p>
+            )}
           </List>
+          {totalPages > 1 && <Pagination totalPages={totalPages} />}
         </Container>
       </section>
       <Modal isOpen={openSignIn} onClose={handleCloseSignIn}>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import sprite from "../../../images/sprite.svg";
 import { CustomSelect, Form, Label, SubmitBtn } from "./Filter.styled";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSearchProducts } from "../../../redux/pharmacy/operations";
+import { selectCurrentPage } from "../../../redux/pharmacy/selectors";
+import { useMediaQuery } from "react-responsive";
 
 const customStyles = {
   control: (baseStyles, state) => ({
@@ -49,21 +51,22 @@ const options = [
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const currentPage = useSelector(selectCurrentPage);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchedName, setSearchedName] = useState("");
 
+  const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
+
   useEffect(() => {
-    if (selectedCategory || searchedName.trim() !== "") {
-      dispatch(
-        getSearchProducts({
-          category: selectedCategory.value,
-          name: searchedName,
-          page: 1,
-          limit: 12,
-        })
-      );
-    }
-  }, [dispatch, selectedCategory, searchedName]);
+    dispatch(
+      getSearchProducts({
+        category: selectedCategory.value,
+        name: searchedName,
+        page: currentPage,
+        limit: isDesktop ? 12 : 9,
+      })
+    );
+  }, [dispatch, selectedCategory, searchedName, currentPage, isDesktop]);
 
   return (
     <>
@@ -95,9 +98,9 @@ const Filter = () => {
             <path
               d="M12.8307 1.75H1.16406L5.83073 7.26833V11.0833L8.16406 12.25V7.26833L12.8307 1.75Z"
               stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           Filter
