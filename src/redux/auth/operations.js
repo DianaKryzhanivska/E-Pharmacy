@@ -37,6 +37,7 @@ export const loginThunk = createAsyncThunk(
       setToken(response.data.token);
       localStorage.setItem("refreshToken", response.data.token);
       localStorage.setItem("accessToken", response.data.token);
+      toast.success(`Welcome to E-Pharmacy ${response.data.user.name}!`);
       return response.data;
     } catch (error) {
       toast.error("Email or password is invalid");

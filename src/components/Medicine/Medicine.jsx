@@ -25,13 +25,15 @@ import { useNavigate } from "react-router-dom";
 import Modal from "components/Modal/Modal";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import SignIn from "components/Modal/SignIn/SignIn";
+import SignUp from "components/Modal/SignUp/SignUp";
 
 const Medicine = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectSearchProducts);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
-  const [openModal, setOpenModal] = useState(false);
+  const [openSignIn, setOpenSignIn] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false);
 
   useEffect(() => {
     dispatch(
@@ -41,17 +43,25 @@ const Medicine = () => {
     );
   }, [dispatch]);
 
-  const handleOpenModal = () => {
-    setOpenModal(true);
+  const handleOpenSignIn = () => {
+    setOpenSignIn(true);
   };
 
-  const handleCloseModal = () => {
-    setOpenModal(false);
+  const handleCloseSignIn = () => {
+    setOpenSignIn(false);
+  };
+
+  const handleOpenSignUp = () => {
+    setOpenSignUp(true);
+  };
+
+  const handleCloseSignUp = () => {
+    setOpenSignUp(false);
   };
 
   const handleAddToCart = (id) => {
     if (!isLoggedIn) {
-      handleOpenModal();
+      handleOpenSignIn();
     } else {
       dispatch(
         addToCart({
@@ -105,8 +115,11 @@ const Medicine = () => {
           </List>
         </Container>
       </section>
-      <Modal isOpen={openModal} onClose={handleCloseModal}>
-        <SignIn onClose={handleCloseModal} />
+      <Modal isOpen={openSignIn} onClose={handleCloseSignIn}>
+        <SignIn onClose={handleCloseSignIn} onToggleModal={handleOpenSignUp} />
+      </Modal>
+      <Modal isOpen={openSignUp} onClose={handleCloseSignUp}>
+        <SignUp onClose={handleCloseSignUp} onToggleModal={handleOpenSignIn} />
       </Modal>
     </>
   );

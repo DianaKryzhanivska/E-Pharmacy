@@ -69,7 +69,7 @@ export const SubmitBtn = styled.button`
   line-height: 1.28em;
 `;
 
-export const RegisterBtn = styled.button`
+export const LinkBtn = styled.button`
   background: transparent;
   color: rgba(29, 30, 33, 0.4);
   font-size: 12px;

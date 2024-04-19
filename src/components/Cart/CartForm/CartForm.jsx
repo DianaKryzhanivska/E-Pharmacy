@@ -34,7 +34,6 @@ const CartForm = () => {
     },
     validationSchema: orderSchema,
     onSubmit: (values) => {
-      console.log(values);
       dispatch(cartCheckout(values))
         .unwrap()
         .then(() => {

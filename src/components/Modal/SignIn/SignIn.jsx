@@ -2,7 +2,7 @@ import React from "react";
 import {
   BtnBox,
   InputBox,
-  RegisterBtn,
+  LinkBtn,
   SubmitBtn,
   Text,
   Title,
@@ -12,8 +12,14 @@ import { loginSchema } from "schemas/yupSchemas";
 import { useDispatch } from "react-redux";
 import { loginThunk } from "../../../redux/auth/operations";
 
-const SignIn = ({ onClose }) => {
+const SignIn = ({ onClose, onToggleModal }) => {
   const dispatch = useDispatch();
+
+  const handleToggleModal = () => {
+    onClose();
+    onToggleModal();
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -61,7 +67,9 @@ const SignIn = ({ onClose }) => {
         </InputBox>
         <BtnBox>
           <SubmitBtn type="submit">Log in</SubmitBtn>
-          <RegisterBtn type="button">Don't have an account?</RegisterBtn>
+          <LinkBtn type="button" onClick={handleToggleModal}>
+            Don't have an account?
+          </LinkBtn>
         </BtnBox>
       </form>
     </>
