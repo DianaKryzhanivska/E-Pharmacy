@@ -27,7 +27,6 @@ const SignIn = ({ onClose, onToggleModal }) => {
     },
     validationSchema: loginSchema,
     onSubmit: (values) => {
-      console.log(values);
       dispatch(loginThunk(values));
       onClose();
     },

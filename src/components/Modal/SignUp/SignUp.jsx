@@ -29,7 +29,6 @@ const SignUp = ({ onClose, onToggleModal }) => {
     },
     validationSchema: registerSchema,
     onSubmit: (values) => {
-      console.log(values);
       dispatch(registerThunk(values))
         .unwrap()
         .then(() => {

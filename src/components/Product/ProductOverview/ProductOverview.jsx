@@ -16,11 +16,34 @@ import {
 } from "./ProductOverview.styled";
 import { addToCart } from "../../../redux/pharmacy/operations";
 import { toast } from "react-toastify";
+import { selectIsLoggedIn } from "../../../redux/auth/selectors";
+import Modal from "components/Modal/Modal";
+import SignIn from "components/Modal/SignIn/SignIn";
+import SignUp from "components/Modal/SignUp/SignUp";
 
 const ProductOverview = () => {
   const dispatch = useDispatch();
   const product = useSelector(selectProduct);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const [amount, setAmount] = useState(0);
+  const [openSignIn, setOpenSignIn] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false);
+
+  const handleOpenSignIn = () => {
+    setOpenSignIn(true);
+  };
+
+  const handleCloseSignIn = () => {
+    setOpenSignIn(false);
+  };
+
+  const handleOpenSignUp = () => {
+    setOpenSignUp(true);
+  };
+
+  const handleCloseSignUp = () => {
+    setOpenSignUp(false);
+  };
 
   const handleIncreaseAmount = () => {
     setAmount((prev) => prev + 1);
@@ -34,16 +57,20 @@ const ProductOverview = () => {
   };
 
   const handleAddToCart = (id) => {
-    if (amount === 0) {
-      toast.info("Please select the quantity of the product");
-      return;
+    if (!isLoggedIn) {
+      handleOpenSignIn();
+    } else {
+      if (amount === 0) {
+        toast.info("Please select the quantity of the product");
+        return;
+      }
+      dispatch(
+        addToCart({
+          productId: id,
+          quantity: amount,
+        })
+      );
     }
-    dispatch(
-      addToCart({
-        productId: id,
-        quantity: amount,
-      })
-    );
   };
 
   return (
@@ -83,6 +110,12 @@ const ProductOverview = () => {
           </BtnBox>
         </InfoBox>
       </Wrapper>
+      <Modal isOpen={openSignIn} onClose={handleCloseSignIn}>
+        <SignIn onClose={handleCloseSignIn} onToggleModal={handleOpenSignUp} />
+      </Modal>
+      <Modal isOpen={openSignUp} onClose={handleCloseSignUp}>
+        <SignUp onClose={handleCloseSignUp} onToggleModal={handleOpenSignIn} />
+      </Modal>
     </>
   );
 };
