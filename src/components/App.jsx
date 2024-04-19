@@ -8,6 +8,7 @@ import MedicinePage from "pages/MedicinePage";
 import ProductPage from "pages/ProductPage";
 import CartPage from "pages/CartPage";
 import NotFoundPage from "pages/NotFoundPage";
+import PrivateRoute from "routes/PrivateRoute";
 
 export const App = () => {
   return (
@@ -19,7 +20,14 @@ export const App = () => {
         <Route path="medicine-store" element={<MedicineStorePage />} />
         <Route path="medicine" element={<MedicinePage />} />
         <Route path="product" element={<ProductPage />} />
-        <Route path="cart" element={<CartPage />} />
+        <Route
+          path="cart"
+          element={
+            <PrivateRoute>
+              <CartPage />
+            </PrivateRoute>
+          }
+        />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
