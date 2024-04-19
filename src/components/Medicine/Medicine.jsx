@@ -38,6 +38,7 @@ const Medicine = () => {
   useEffect(() => {
     dispatch(
       getSearchProducts({
+        page: 1,
         limit: 12,
       })
     );
