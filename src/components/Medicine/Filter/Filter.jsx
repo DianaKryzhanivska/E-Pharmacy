@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sprite from "../../../images/sprite.svg";
-import { Form, Label, SubmitBtn } from "./Filter.styled";
-import Select from "react-select";
+import { CustomSelect, Form, Label, SubmitBtn } from "./Filter.styled";
 import { useDispatch } from "react-redux";
 import { getSearchProducts } from "../../../redux/pharmacy/operations";
 
@@ -10,7 +9,7 @@ const customStyles = {
     ...baseStyles,
     borderRadius: "60px",
     border: "1px solid rgba(29, 30, 33, 0.10)",
-    height: "44px",
+    height: "46px",
     background: "#fff",
     fontSize: "12px",
   }),
@@ -69,7 +68,7 @@ const Filter = () => {
   return (
     <>
       <Form onSubmit={(e) => e.preventDefault()}>
-        <Select
+        <CustomSelect
           options={options}
           placeholder="Product category"
           styles={customStyles}

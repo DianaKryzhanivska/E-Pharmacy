@@ -26,6 +26,10 @@ export const Title = styled.h2`
   @media only screen and (min-width: 768px) {
     margin-bottom: 32px;
   }
+
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const List = styled.ul`

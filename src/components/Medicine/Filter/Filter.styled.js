@@ -1,10 +1,28 @@
 import styled from "styled-components";
+import Select from "react-select";
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 40px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 32px;
+    flex-direction: row;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
+`;
+
+export const CustomSelect = styled(Select)`
+  width: 100%;
+
+  @media only screen and (min-width: 768px) {
+    width: 214px;
+  }
 `;
 
 export const Label = styled.label`
@@ -30,6 +48,12 @@ export const Label = styled.label`
     fill: none;
     width: 16px;
     height: 16px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    & input {
+      width: 224px;
+    }
   }
 `;
 
