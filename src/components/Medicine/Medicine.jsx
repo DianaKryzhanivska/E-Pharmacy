@@ -106,7 +106,7 @@ const Medicine = () => {
         </Container>
       </section>
       <Modal isOpen={openModal} onClose={handleCloseModal}>
-        <SignIn />
+        <SignIn onClose={handleCloseModal} />
       </Modal>
     </>
   );

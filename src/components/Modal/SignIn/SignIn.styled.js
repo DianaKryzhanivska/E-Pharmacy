@@ -40,6 +40,12 @@ export const InputBox = styled.div`
     line-height: 1.5em;
   }
 
+  & span {
+    color: red;
+    font-size: 12px;
+    margin-left: 18px;
+  }
+
   @media only screen and (min-width: 768px) {
     gap: 14px;
   }
