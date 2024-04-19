@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AddToCartBtn,
   BtnBox,
@@ -22,11 +22,16 @@ import {
   getSearchProducts,
 } from "../../redux/pharmacy/operations";
 import { useNavigate } from "react-router-dom";
+import Modal from "components/Modal/Modal";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import SignIn from "components/Modal/SignIn/SignIn";
 
 const Medicine = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectSearchProducts);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     dispatch(
@@ -36,13 +41,25 @@ const Medicine = () => {
     );
   }, [dispatch]);
 
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
   const handleAddToCart = (id) => {
-    dispatch(
-      addToCart({
-        productId: id,
-        quantity: 1,
-      })
-    );
+    if (!isLoggedIn) {
+      handleOpenModal();
+    } else {
+      dispatch(
+        addToCart({
+          productId: id,
+          quantity: 1,
+        })
+      );
+    }
   };
 
   const handleDetailsClick = (id) => {
@@ -88,6 +105,9 @@ const Medicine = () => {
           </List>
         </Container>
       </section>
+      <Modal isOpen={openModal} onClose={handleCloseModal}>
+        <SignIn />
+      </Modal>
     </>
   );
 };
