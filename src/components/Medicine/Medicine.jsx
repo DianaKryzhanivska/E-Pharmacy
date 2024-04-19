@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   AddToCartBtn,
   BtnBox,
@@ -16,16 +16,13 @@ import {
 } from "./Medicine.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSearchProducts } from "../../redux/pharmacy/selectors";
-import {
-  addToCart,
-  getProductById,
-  getSearchProducts,
-} from "../../redux/pharmacy/operations";
+import { addToCart, getProductById } from "../../redux/pharmacy/operations";
 import { useNavigate } from "react-router-dom";
 import Modal from "components/Modal/Modal";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import SignIn from "components/Modal/SignIn/SignIn";
 import SignUp from "components/Modal/SignUp/SignUp";
+import Filter from "./Filter/Filter";
 
 const Medicine = () => {
   const dispatch = useDispatch();
@@ -34,15 +31,6 @@ const Medicine = () => {
   const navigate = useNavigate();
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-
-  useEffect(() => {
-    dispatch(
-      getSearchProducts({
-        page: 1,
-        limit: 12,
-      })
-    );
-  }, [dispatch]);
 
   const handleOpenSignIn = () => {
     setOpenSignIn(true);
@@ -84,6 +72,7 @@ const Medicine = () => {
       <section>
         <Container>
           <Title>Medicine</Title>
+          <Filter />
           <List>
             {products?.map((product) => (
               <Item key={product._id}>
