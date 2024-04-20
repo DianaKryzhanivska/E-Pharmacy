@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {
   AddressBox,
   Container,
+  IsOpenItem,
   Item,
   List,
   PhoneBox,
@@ -62,7 +63,9 @@ const NearestStores = () => {
                       </svg>
                       <p>{store.rating}</p>
                     </RatingBox>
-                    <button type="button">open</button>
+                    <IsOpenItem type="button" open={store.isOpen}>
+                      {store.isOpen ? "open" : "close"}
+                    </IsOpenItem>
                   </RatingWithBtn>
                 </Item>
               ))}

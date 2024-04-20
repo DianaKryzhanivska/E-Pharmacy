@@ -171,22 +171,23 @@ export const RatingWithBtn = styled.div`
   gap: 14px;
   align-items: center;
 
-  & button {
-    text-transform: uppercase;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: rgba(89, 177, 122, 0.1);
-    color: #59b17a;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.5em;
-    letter-spacing: -0.24px;
-  }
-
   @media only screen and (min-width: 768px) {
     top: 202px;
     right: 40px;
   }
+`;
+
+export const IsOpenItem = styled.div`
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: ${({ open }) =>
+    open ? "rgba(89, 177, 122, 0.1)" : "rgba(232, 80, 80, 0.10)"};
+  color: ${({ open }) => (open ? "#59b17a" : "#E85050")};
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5em;
+  letter-spacing: -0.24px;
 `;
 
 export const RatingBox = styled.div`

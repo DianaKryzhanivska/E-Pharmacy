@@ -95,5 +95,5 @@ export const ImgBox = styled.div`
   border-radius: 64px;
   box-shadow: 0px 1px 4px 0px rgba(16, 24, 40, 0.06);
   background: ${({ theme }) => theme.colors.white};
-  border: 1px solid black;
+  overflow: hidden;
 `;

@@ -32,7 +32,9 @@ const Reviews = () => {
           <List>
             {reviews?.map((review) => (
               <Item key={review._id}>
-                <ImgBox></ImgBox>
+                <ImgBox>
+                  <img src={review.photo} alt="person" />
+                </ImgBox>
                 <h3>{review.name}</h3>
                 <p>{review.testimonial}</p>
               </Item>
