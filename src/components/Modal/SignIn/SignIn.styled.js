@@ -41,7 +41,7 @@ export const InputBox = styled.div`
   }
 
   & span {
-    color: red;
+    color: #e85050;
     font-size: 12px;
     margin-left: 18px;
   }

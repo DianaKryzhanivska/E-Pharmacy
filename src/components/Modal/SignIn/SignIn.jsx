@@ -52,7 +52,7 @@ const SignIn = ({ onClose, onToggleModal }) => {
           </label>
           <label htmlFor="password">
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               placeholder="Password"

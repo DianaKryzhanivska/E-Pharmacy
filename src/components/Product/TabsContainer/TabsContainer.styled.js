@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    padding: 32px 32px 70px;
+    padding: 32px 32px 64px;
   }
 
   @media only screen and (min-width: 1440px) {
@@ -25,14 +25,131 @@ export const Wrapper = styled.div`
 export const BtnBox = styled.div`
   display: flex;
   gap: 8px;
+  margin-bottom: 20px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const DescBtn = styled.button`
-  background: ${({ theme }) => theme.colors.green};
-  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme, active }) =>
+    active ? theme.colors.green : "rgba(89, 177, 122, 0.1)"};
+  color: ${({ theme, active }) =>
+    active ? theme.colors.white : theme.colors.green};
 `;
 
 export const ReviewsBtn = styled.button`
-  background: rgba(89, 177, 122, 0.1);
-  color: ${({ theme }) => theme.colors.green};
+  background: ${({ theme, active }) =>
+    active ? theme.colors.green : "rgba(89, 177, 122, 0.1)"};
+  color: ${({ theme, active }) =>
+    active ? theme.colors.white : theme.colors.green};
+`;
+
+export const DescList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const Item = styled.li`
+  color: ${({ theme }) => theme.colors.black};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28em;
+
+  & span {
+    color: #6a6a6f;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+`;
+
+export const ReviewsList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const ReviewItem = styled.li`
+  position: relative;
+  padding: 14px 28px;
+  border-radius: 20px;
+  border: 1px solid #f1f1f1;
+`;
+
+export const ImgNameBox = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-bottom: 14px;
+`;
+
+export const ImgBox = styled.div`
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+`;
+
+export const Name = styled.h3`
+  color: ${({ theme }) => theme.colors.black};
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-bottom: 4px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+`;
+
+export const Time = styled.p`
+  color: rgba(29, 30, 33, 0.6);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5em;
+`;
+
+export const Text = styled.p`
+  color: #6a6a6f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
+export const RatingBox = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 28px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  & p {
+    color: ${({ theme }) => theme.colors.black};
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.28em;
+  }
+
+  & svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffc531;
+  }
+
+  & div {
+    display: flex;
+    gap: 2px;
+  }
 `;

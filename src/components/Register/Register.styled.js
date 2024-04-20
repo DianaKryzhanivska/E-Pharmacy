@@ -87,7 +87,7 @@ export const InputBox = styled.div`
     position: absolute;
     bottom: -10px;
     left: 18px;
-    color: red;
+    color: #e85050;
     font-size: 12px;
   }
 

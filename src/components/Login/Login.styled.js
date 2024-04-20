@@ -19,7 +19,7 @@ export const InputBox = styled.div`
 
   & span {
     position: absolute;
-    color: red;
+    color: #e85050;
     bottom: -10px;
     left: 18px;
     font-size: 12px;

@@ -58,7 +58,7 @@ export const InputBox = styled.div`
     gap: 8px;
 
     & span {
-      color: red;
+      color: #e85050;
       font-size: 12px;
     }
   }
@@ -106,7 +106,7 @@ export const RadioBox = styled.div`
   }
 
   & span {
-    color: red;
+    color: #e85050;
     font-size: 12px;
   }
 `;
