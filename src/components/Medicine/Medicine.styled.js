@@ -129,6 +129,11 @@ export const AddToCartBtn = styled.button`
   font-size: 14px;
   font-weight: 500;
   line-height: 1em;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #3f945f;
+  }
 `;
 
 export const DetailsBtn = styled.button`

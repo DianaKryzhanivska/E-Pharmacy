@@ -49,7 +49,7 @@ const options = [
   { value: "Skin Care", label: "Skin Care" },
 ];
 
-const Filter = () => {
+const Filter = ({ totalPages }) => {
   const dispatch = useDispatch();
   const currentPage = useSelector(selectCurrentPage);
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -66,7 +66,14 @@ const Filter = () => {
         limit: isDesktop ? 12 : 9,
       })
     );
-  }, [dispatch, selectedCategory, searchedName, currentPage, isDesktop]);
+  }, [
+    dispatch,
+    selectedCategory,
+    searchedName,
+    currentPage,
+    isDesktop,
+    totalPages,
+  ]);
 
   return (
     <>

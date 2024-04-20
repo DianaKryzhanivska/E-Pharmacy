@@ -144,6 +144,11 @@ export const SubmitBtn = styled.button`
   line-height: 1.28em;
   display: flex;
   justify-content: center;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #3f945f;
+  }
 
   @media only screen and (min-width: 768px) {
     padding: 13px 112px;

@@ -77,10 +77,10 @@ const Medicine = () => {
       <section>
         <Container>
           <Title>Medicine</Title>
-          <Filter />
-
+          <Filter totalPages={totalPages} />
           <List>
-            {products && products.length > 0 ? (
+            {products &&
+              products.length > 0 &&
               products?.map((product) => (
                 <Item key={product._id}>
                   <ImgBox>
@@ -108,10 +108,7 @@ const Medicine = () => {
                     </BtnBox>
                   </Info>
                 </Item>
-              ))
-            ) : (
-              <p>Nothing was found for your request</p>
-            )}
+              ))}
           </List>
           {totalPages > 1 && <Pagination totalPages={totalPages} />}
         </Container>

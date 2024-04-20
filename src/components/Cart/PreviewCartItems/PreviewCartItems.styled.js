@@ -151,4 +151,10 @@ export const RemoveBtn = styled.button`
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.7px;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #e85050;
+    color: #fff;
+  }
 `;

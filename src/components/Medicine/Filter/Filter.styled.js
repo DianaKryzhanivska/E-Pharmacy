@@ -69,6 +69,11 @@ export const SubmitBtn = styled.button`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28em;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: #3f945f;
+  }
 
   & svg {
     width: 14px;

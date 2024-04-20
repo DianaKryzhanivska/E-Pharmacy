@@ -12,6 +12,12 @@ export const Icon = styled.div`
   border: 1px solid ${({ theme }) => theme.borders.icon};
   width: 44px;
   height: 44px;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid rgba(247, 248, 250, 0.5);
+  }
 
   & svg {
     width: 28px;
