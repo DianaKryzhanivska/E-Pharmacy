@@ -40,7 +40,7 @@ export const CartItems = styled.div`
   height: 16px;
   top: -2px;
   right: -2px;
-  color: #59b17a;
+  color: ${({ theme }) => theme.colors.green};
   font-size: 12px;
   font-weight: 700;
   display: flex;

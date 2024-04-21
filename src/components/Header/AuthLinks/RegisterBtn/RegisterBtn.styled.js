@@ -15,7 +15,8 @@ export const Btn = styled.button`
   }
 
   @media only screen and (min-width: 1440px) {
-    color: ${({ pageType }) => (pageType === "home" ? "#F1F1F1" : "#59B17A")};
+    color: ${({ theme, pageType }) =>
+      pageType === "home" ? "#F1F1F1" : theme.colors.green};
     border: ${({ pageType }) =>
       pageType === "home"
         ? "1px solid rgba(241, 241, 241, 0.50)"

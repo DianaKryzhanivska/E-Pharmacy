@@ -183,7 +183,7 @@ export const IsOpenItem = styled.div`
   border-radius: 8px;
   background: ${({ open }) =>
     open ? "rgba(89, 177, 122, 0.1)" : "rgba(232, 80, 80, 0.10)"};
-  color: ${({ open }) => (open ? "#59b17a" : "#E85050")};
+  color: ${({ theme, open }) => (open ? theme.colors.green : "#E85050")};
   font-size: 12px;
   font-weight: 600;
   line-height: 1.5em;

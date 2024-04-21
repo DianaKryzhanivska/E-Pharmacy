@@ -155,6 +155,6 @@ export const RemoveBtn = styled.button`
 
   &:hover {
     background: #e85050;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
   }
 `;

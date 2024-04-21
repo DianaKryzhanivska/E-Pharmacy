@@ -78,6 +78,6 @@ export const SubmitBtn = styled.button`
   & svg {
     width: 14px;
     height: 14px;
-    stroke: #fff;
+    stroke: ${({ theme }) => theme.colors.white};
   }
 `;
