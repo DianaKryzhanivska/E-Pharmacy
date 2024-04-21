@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3020/api";
+const BASE_URL = "https://e-pharmacy-backend.onrender.com";
 
 const instance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: BASE_URL + "/api",
   headers: {
     "Content-Type": "application/json",
   },
