@@ -50,7 +50,6 @@ const PreviewCartItems = () => {
   };
 
   const handleDeleteProduct = (id) => {
-    console.log(id);
     dispatch(deleteFromCart(id));
   };
 

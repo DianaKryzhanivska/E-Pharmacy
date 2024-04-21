@@ -114,7 +114,6 @@ export const deleteFromCart = createAsyncThunk(
   async (id, { rejectWithValue, getState }) => {
     try {
       setToken(getState().auth.token);
-      console.log(id);
       const response = await instance.delete(`/cart/remove/${id}`);
       toast.success("Product removed from cart");
       return response.data;

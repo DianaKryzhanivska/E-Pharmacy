@@ -16,6 +16,7 @@ import { useFormik } from "formik";
 import { orderSchema } from "schemas/yupSchemas";
 import { cartCheckout } from "../../../redux/pharmacy/operations";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const CartForm = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,10 @@ const CartForm = () => {
     },
     validationSchema: orderSchema,
     onSubmit: (values) => {
+      if (!cart || !cart.cartProducts || cart.cartProducts.length === 0) {
+        toast.error("Please select product to make an order");
+        return;
+      }
       dispatch(cartCheckout(values))
         .unwrap()
         .then(() => {
