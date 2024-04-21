@@ -2,6 +2,27 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Medium.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-SemiBold.ttf") format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     outline: none;
@@ -20,7 +41,7 @@ p {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
 }
 

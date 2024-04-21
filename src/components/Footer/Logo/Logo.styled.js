@@ -13,7 +13,7 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   & p {
-    color: ${({ theme }) => theme.colors.lighGray};
+    color: ${({ theme }) => theme.colors.lightGray};
     font-size: 16px;
     font-weight: 600;
     letter-spacing: -0.48px;
