@@ -18,7 +18,7 @@ An application for a pharmacy that offers to buy the medicines online.
 The website is designed with a mobile-first approach. Adaptive design with
 breakpoints 320px, 375px, 768px, 1440px. Modal windows for Sign In, Sign Up.
 
-Own API was created for the application (https://github.com/DianaKryzhanivska/E-Pharmacy-backend)
+Own API was created for the application [E-Pharmacy Backend API](https://github.com/DianaKryzhanivska/E-Pharmacy-backend)
 
 The possibility of authorization was added to the
 application (registration, login, obtaining data about the current user, logout)
