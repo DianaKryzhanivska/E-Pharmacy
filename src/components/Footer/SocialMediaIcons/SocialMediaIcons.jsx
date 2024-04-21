@@ -6,21 +6,39 @@ const SocialMediaIcons = () => {
   return (
     <>
       <Wrapper>
-        <Icon>
-          <svg>
-            <use href={`${sprite}#facebook`} />
-          </svg>
-        </Icon>
-        <Icon>
-          <svg>
-            <use href={`${sprite}#instagram`} />
-          </svg>
-        </Icon>
-        <Icon>
-          <svg>
-            <use href={`${sprite}#youtube`} />
-          </svg>
-        </Icon>
+        <a
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon>
+            <svg>
+              <use href={`${sprite}#facebook`} />
+            </svg>
+          </Icon>
+        </a>
+        <a
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon>
+            <svg>
+              <use href={`${sprite}#instagram`} />
+            </svg>
+          </Icon>
+        </a>
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon>
+            <svg>
+              <use href={`${sprite}#youtube`} />
+            </svg>
+          </Icon>
+        </a>
       </Wrapper>
     </>
   );
