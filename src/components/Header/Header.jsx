@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Logo from "./Logo/Logo";
 import sprite from "../../images/sprite.svg";
-import { Box, BurgerBtn, Container, Wrapper } from "./Header.styled";
+import {
+  Box,
+  BurgerBtn,
+  Container,
+  GreenSvg,
+  WhiteSvg,
+  Wrapper,
+} from "./Header.styled";
 import Menu from "./Menu/Menu";
 import { useMediaQuery } from "react-responsive";
 import NavLinks from "./NavLinks/NavLinks";
@@ -37,26 +44,30 @@ const Header = ({ pageType }) => {
           {isLoggedIn && !isDesktop && (
             <Wrapper>
               <UserIcons pageType={pageType} />
-              <BurgerBtn
-                type="button"
-                pageType={pageType}
-                onClick={handleOpenMenu}
-              >
-                <svg>
-                  <use href={`${sprite}#burger`} />
-                </svg>
+              <BurgerBtn type="button" onClick={handleOpenMenu}>
+                {pageType === "home" ? (
+                  <WhiteSvg>
+                    <use href={`${sprite}#burger`} />
+                  </WhiteSvg>
+                ) : (
+                  <GreenSvg>
+                    <use href={`${sprite}#burger`} />
+                  </GreenSvg>
+                )}
               </BurgerBtn>
             </Wrapper>
           )}
           {!isLoggedIn && !isDesktop && (
-            <BurgerBtn
-              type="button"
-              pageType={pageType}
-              onClick={handleOpenMenu}
-            >
-              <svg>
-                <use href={`${sprite}#burger`} />
-              </svg>
+            <BurgerBtn type="button" onClick={handleOpenMenu}>
+              {pageType === "home" ? (
+                <WhiteSvg>
+                  <use href={`${sprite}#burger`} />
+                </WhiteSvg>
+              ) : (
+                <GreenSvg>
+                  <use href={`${sprite}#burger`} />
+                </GreenSvg>
+              )}
             </BurgerBtn>
           )}
           {isLoggedIn && isDesktop && (

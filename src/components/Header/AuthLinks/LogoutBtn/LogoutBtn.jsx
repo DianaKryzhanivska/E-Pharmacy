@@ -1,10 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Btn } from "./RegisterBtn.styled";
+import { useDispatch } from "react-redux";
+import { logoutThunk } from "../../../../redux/auth/operations";
+import { Btn } from "./LogoutBtn.styled";
 import { useMediaQuery } from "react-responsive";
 
-const RegisterBtn = ({ pageType }) => {
+const LogoutBtn = ({ pageType }) => {
+  const dispatch = useDispatch();
+
   const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
+
+  const handleLogoutClick = () => {
+    dispatch(logoutThunk());
+  };
 
   const btnColor = !isDesktop
     ? "#f1f1f1"
@@ -20,11 +27,14 @@ const RegisterBtn = ({ pageType }) => {
 
   return (
     <>
-      <Btn type="button" style={{ color: btnColor, border: btnBorder }}>
-        <NavLink to="/register">Register</NavLink>
+      <Btn
+        style={{ color: btnColor, border: btnBorder }}
+        onClick={handleLogoutClick}
+      >
+        Log out
       </Btn>
     </>
   );
 };
 
-export default RegisterBtn;
+export default LogoutBtn;

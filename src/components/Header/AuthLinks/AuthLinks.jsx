@@ -1,26 +1,18 @@
 import React from "react";
 import RegisterBtn from "./RegisterBtn/RegisterBtn";
 import LoginBtn from "./LoginBtn/LoginBtn";
-import { Wrapper, LogoutBtn } from "./AuthLinks.styled";
-import { useDispatch, useSelector } from "react-redux";
+import { Wrapper } from "./AuthLinks.styled";
+import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../../redux/auth/selectors";
-import { logoutThunk } from "../../../redux/auth/operations";
+import LogoutBtn from "./LogoutBtn/LogoutBtn";
 
 const AuthLinks = ({ pageType }) => {
-  const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
-  const handleLogoutClick = () => {
-    dispatch(logoutThunk());
-  };
-
   return (
     <>
       <Wrapper>
         {isLoggedIn ? (
-          <LogoutBtn pageType={pageType} onClick={handleLogoutClick}>
-            Log out
-          </LogoutBtn>
+          <LogoutBtn pageType={pageType} />
         ) : (
           <>
             <RegisterBtn pageType={pageType} />
