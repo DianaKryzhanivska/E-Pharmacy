@@ -3,6 +3,9 @@ import { CommonContainer } from "styles/GlobalStyles";
 import imgMob from "../../../images/hero-mob@1x.png";
 import imgTab from "../../../images/hero-tab@1x.png";
 import imgDesk from "../../../images/hero-desk@1x.png";
+import retinaImgMob from "../../../images/hero-mob@2x.png";
+import retinaImgTab from "../../../images/hero-tab@2x.png";
+import retinaImgDesk from "../../../images/hero-desk@2x.png";
 
 export const Container = styled(CommonContainer)`
   padding-top: 197px;
@@ -30,17 +33,32 @@ export const HeroBox = styled.div`
   background-size: cover;
   background-position: center;
 
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+    background-image: url(${retinaImgMob});
+  }
+
   @media only screen and (min-width: 768px) {
     width: 704px;
     height: 508px;
     padding: 140px 64px 156px 31px;
     background-image: url(${imgTab});
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+      background-image: url(${retinaImgTab});
+    }
   }
 
   @media only screen and (min-width: 1440px) {
     width: 749px;
     padding: 140px 86px 156px 54px;
     background-image: url(${imgDesk});
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+      background-image: url(${retinaImgDesk});
+    }
   }
 `;
 
