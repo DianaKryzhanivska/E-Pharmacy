@@ -75,14 +75,51 @@ const Filter = ({ totalPages }) => {
     totalPages,
   ]);
 
+  const handleCategoryChange = (selectedOption) => {
+    setSelectedCategory(selectedOption);
+    dispatch(
+      getSearchProducts({
+        category: selectedOption.value,
+        name: searchedName,
+        page: 1,
+        limit: isDesktop ? 12 : 9,
+      })
+    );
+  };
+
+  const handleSearchInputChange = (e) => {
+    setSearchedName(e.target.value);
+    dispatch(
+      getSearchProducts({
+        category: selectedCategory.value,
+        name: e.target.value,
+        page: 1,
+        limit: isDesktop ? 12 : 9,
+      })
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(
+      getSearchProducts({
+        category: selectedCategory.value,
+        name: searchedName,
+        page: 1,
+        limit: isDesktop ? 12 : 9,
+      })
+    );
+  };
+
   return (
     <>
-      <Form onSubmit={(e) => e.preventDefault()}>
+      <Form onSubmit={handleSubmit}>
         <CustomSelect
           options={options}
           placeholder="Product category"
           styles={customStyles}
-          onChange={setSelectedCategory}
+          onChange={handleCategoryChange}
           value={selectedCategory}
         />
         <Label htmlFor="name">
@@ -90,7 +127,7 @@ const Filter = ({ totalPages }) => {
             type="text"
             id="name"
             placeholder="Search medicine"
-            onChange={(e) => setSearchedName(e.target.value)}
+            onChange={handleSearchInputChange}
           />
           <svg>
             <use href={`${sprite}#search`} />
