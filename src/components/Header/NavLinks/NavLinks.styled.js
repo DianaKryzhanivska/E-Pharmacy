@@ -38,6 +38,10 @@ export const NavList = styled.ul`
     font-size: 14px;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.gray};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.black};
+    }
   }
 
   & a {
@@ -48,6 +52,10 @@ export const NavList = styled.ul`
   & a.active {
     background: ${({ theme }) => theme.colors.green};
     color: ${({ theme }) => theme.colors.white};
+
+    &:hover {
+      background: #3f945f;
+    }
   }
 
   @media only screen and (min-width: 1440px) {

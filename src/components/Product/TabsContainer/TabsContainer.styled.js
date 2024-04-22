@@ -41,6 +41,13 @@ export const DescBtn = styled.button`
     active ? theme.colors.green : "rgba(89, 177, 122, 0.1)"};
   color: ${({ theme, active }) =>
     active ? theme.colors.white : theme.colors.green};
+  transition: 0.3 s ease;
+
+  &:hover {
+    background: ${({ active }) =>
+      active ? "#3F945F" : "rgba(89, 177, 122, 0.10)"};
+    color: ${({ theme, active }) => (!active ? "#3F945F" : theme.colors.white)};
+  }
 `;
 
 export const ReviewsBtn = styled.button`
@@ -48,6 +55,12 @@ export const ReviewsBtn = styled.button`
     active ? theme.colors.green : "rgba(89, 177, 122, 0.1)"};
   color: ${({ theme, active }) =>
     active ? theme.colors.white : theme.colors.green};
+
+  &:hover {
+    background: ${({ active }) =>
+      active ? "#3F945F" : "rgba(89, 177, 122, 0.10)"};
+    color: ${({ theme, active }) => (!active ? "#3F945F" : theme.colors.white)};
+  }
 `;
 
 export const DescList = styled.ul`

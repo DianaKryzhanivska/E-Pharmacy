@@ -75,6 +75,12 @@ export const Btn = styled.button`
     font-size: 14px;
     font-weight: 500;
     line-height: 1.28em;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: #f1f1f1;
+      color: ${({ theme }) => theme.colors.green};
+    }
   }
 
   @media only screen and (min-width: 768px) {
