@@ -16,6 +16,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
+  cursor: pointer;
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(29, 30, 33, 0.1);

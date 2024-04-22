@@ -20,12 +20,15 @@ import {
   decreaseQuantity,
   deleteFromCart,
   getCartItems,
+  getProductById,
 } from "../../../redux/pharmacy/operations";
+import { useNavigate } from "react-router-dom";
 
 const PreviewCartItems = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cart = useSelector(selectCart);
-  const cartItemsQuantity = cart?.cartProducts?.length || 0;
+  const cartItemsQuantity = cart?.cartProducts?.length || "";
 
   useEffect(() => {
     dispatch(getCartItems());
@@ -53,12 +56,21 @@ const PreviewCartItems = () => {
     dispatch(deleteFromCart(id));
   };
 
+  const handleProductClick = (id) => {
+    dispatch(getProductById(id)).then(() => {
+      navigate("/product");
+    });
+  };
+
   return (
     <>
       <div>
         <List>
           {cart?.cartProducts?.map((product) => (
-            <Item key={product.productId._id}>
+            <Item
+              key={product.productId._id}
+              onClick={() => handleProductClick(product.productId._id)}
+            >
               <ImgBox>
                 <img src={product.productId.photo} alt="product" />
               </ImgBox>
