@@ -3,14 +3,19 @@ import { useDispatch } from "react-redux";
 import { logoutThunk } from "../../../../redux/auth/operations";
 import { Btn } from "./LogoutBtn.styled";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 
 const LogoutBtn = ({ pageType }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const isDesktop = useMediaQuery({ query: "(min-width: 1440px)" });
 
   const handleLogoutClick = () => {
     dispatch(logoutThunk());
+    if (pageType === "cart") {
+      navigate("/home");
+    }
   };
 
   const btnColor = !isDesktop

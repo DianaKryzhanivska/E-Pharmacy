@@ -7,6 +7,7 @@ import PreviewCartItems from "./PreviewCartItems/PreviewCartItems";
 
 const Cart = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getCartItems());
   }, [dispatch]);
