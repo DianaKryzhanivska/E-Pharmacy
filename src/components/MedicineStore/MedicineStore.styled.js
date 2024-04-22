@@ -63,14 +63,59 @@ export const Item = styled.li`
   border-radius: 27px;
   border: 1.155px solid ${({ theme }) => theme.colors.subWhite};
   background: #e7f1ed;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    right: -50.914px;
+    bottom: -30.039px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    right: -42.914px;
+    bottom: 19.961px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
 
   @media only screen and (min-width: 768px) {
     min-width: 344px;
     padding: 40px;
+
+    &::before {
+      right: -57.914px;
+      bottom: 162.961px;
+    }
+
+    &::after {
+      right: -39.914px;
+      bottom: 217.961px;
+    }
   }
 
   @media only screen and (min-width: 1440px) {
     min-width: 381px;
+
+    &::before {
+      right: -34.914px;
+      bottom: 164.961px;
+    }
+
+    &::after {
+      right: -17.914px;
+      bottom: 219.961px;
+    }
   }
 `;
 
@@ -123,6 +168,7 @@ export const AddressBox = styled.div`
 `;
 
 export const PhoneBox = styled.div`
+  position: relative;
   display: flex;
   gap: 8px;
 
@@ -138,10 +184,34 @@ export const PhoneBox = styled.div`
     line-height: 1.28em;
   }
 
+  &::after {
+    position: absolute;
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    right: -132.914px;
+    bottom: 1.96px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
+
   @media only screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25em;
     margin-bottom: 36px;
+
+    &::after {
+      right: -138.914px;
+      bottom: 128.96px;
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    &::after {
+      right: -123.91px;
+      bottom: 128.96px;
+    }
   }
 `;
 

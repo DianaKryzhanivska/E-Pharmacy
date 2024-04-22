@@ -70,14 +70,59 @@ export const Item = styled.li`
   border-radius: 27px;
   border: 1.155px solid ${({ theme }) => theme.colors.subWhite};
   background: #e7f1ed;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    right: -50.914px;
+    bottom: -30.039px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    right: -42.914px;
+    bottom: 19.961px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
 
   @media only screen and (min-width: 768px) {
     min-width: 344px;
     padding: 40px 40px 46px;
+
+    &::before {
+      right: -88.914px;
+      bottom: -27.039px;
+    }
+
+    &::after {
+      right: -74.914px;
+      bottom: 23.961px;
+    }
   }
 
   @media only screen and (min-width: 1440px) {
     min-width: 392px;
+
+    &::before {
+      right: -33.914px;
+      bottom: -24.039px;
+    }
+
+    &::after {
+      right: -17.914px;
+      bottom: 29.961px;
+    }
   }
 `;
 
@@ -130,8 +175,21 @@ export const AddressBox = styled.div`
 `;
 
 export const PhoneBox = styled.div`
+  position: relative;
   display: flex;
   gap: 8px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    right: -132.914px;
+    bottom: 1.96px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
 
   & svg {
     width: 18px;
@@ -148,6 +206,18 @@ export const PhoneBox = styled.div`
   @media only screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.25em;
+
+    &::after {
+      right: -170.914px;
+      bottom: 0.96px;
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    &::after {
+      right: -119.91px;
+      bottom: 5.96px;
+    }
   }
 `;
 
