@@ -50,7 +50,15 @@ const MedicineStore = () => {
                       <use href={`${sprite}#map`} />
                     </svg>
                     <ul>
-                      <li>{store.address}</li>
+                      <li>
+                        <a
+                          href={`https://maps.google.com/?q=${store.address},${store.city}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {store.address}
+                        </a>
+                      </li>
                       <li>{store.city}</li>
                     </ul>
                   </AddressBox>
@@ -58,7 +66,9 @@ const MedicineStore = () => {
                     <svg>
                       <use href={`${sprite}#phone`} />
                     </svg>
-                    <p>{store.phone}</p>
+                    <a href={`tel:${store.phone}`}>
+                      <p>{store.phone}</p>
+                    </a>
                   </PhoneBox>
                   {isTabletOrDesktop && (
                     <VisitStoreBtn type="button">
