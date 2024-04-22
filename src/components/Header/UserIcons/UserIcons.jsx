@@ -6,6 +6,7 @@ import { selectUser } from "../../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import { getCartItems } from "../../../redux/pharmacy/operations";
+import { getUserInfoThunk } from "../../../redux/auth/operations";
 
 const UserIcons = ({ pageType }) => {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ const UserIcons = ({ pageType }) => {
   useEffect(() => {
     dispatch(getCartItems());
   }, [dispatch, cartItemsQuantity]);
+
+  useEffect(() => {
+    dispatch(getUserInfoThunk());
+  }, [dispatch]);
 
   const handleCartClick = () => {
     navigate("/cart");

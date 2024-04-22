@@ -16,7 +16,7 @@ import { authReducer } from "./auth/slice";
 const authPersistConfig = {
   key: "auth",
   storage,
-  whitelist: ["token", "accessToken", "refreshToken"],
+  whitelist: ["token", "accessToken", "refreshToken", "isLoggedIn"],
 };
 
 const pharmacyPersistConfig = {
