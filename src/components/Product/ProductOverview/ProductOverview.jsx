@@ -14,7 +14,7 @@ import {
   Text,
   Wrapper,
 } from "./ProductOverview.styled";
-import { addToCart } from "../../../redux/pharmacy/operations";
+import { addToCart, getCartItems } from "../../../redux/pharmacy/operations";
 import { toast } from "react-toastify";
 import { selectIsLoggedIn } from "../../../redux/auth/selectors";
 import Modal from "components/Modal/Modal";
@@ -70,6 +70,7 @@ const ProductOverview = () => {
           quantity: amount,
         })
       );
+      dispatch(getCartItems());
     }
   };
 

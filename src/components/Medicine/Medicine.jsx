@@ -19,7 +19,11 @@ import {
   selectSearchProducts,
   selectTotalPages,
 } from "../../redux/pharmacy/selectors";
-import { addToCart, getProductById } from "../../redux/pharmacy/operations";
+import {
+  addToCart,
+  getCartItems,
+  getProductById,
+} from "../../redux/pharmacy/operations";
 import { useNavigate } from "react-router-dom";
 import Modal from "components/Modal/Modal";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
@@ -63,6 +67,7 @@ const Medicine = () => {
           quantity: 1,
         })
       );
+      dispatch(getCartItems());
     }
   };
 
