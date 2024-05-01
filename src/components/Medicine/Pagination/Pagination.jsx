@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentPage } from "../../../redux/pharmacy/selectors";
 import { Btn, BtnList, Wrapper } from "./Pagination.styled";
@@ -15,6 +15,10 @@ const Pagination = ({ totalPages }) => {
 
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const buttonsPerPage = isMobile ? 2 : 3;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   const handlePageClick = useCallback(
     (pageNumber) => {
